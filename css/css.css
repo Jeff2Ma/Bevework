@@ -552,10 +552,11 @@ body {
 /* line 163, ../sass/css.scss */
 #content {
   width: 647px;
+  margin-top: 1.5em;
 }
 
 /*article*/
-/* line 174, ../sass/css.scss */
+/* line 175, ../sass/css.scss */
 article.post {
   background: #f6f6f6;
   border: 1px solid #e0e0e0;
@@ -565,15 +566,15 @@ article.post {
   margin-bottom: 1.5em;
   position: relative;
 }
-/* line 180, ../sass/css.scss */
+/* line 181, ../sass/css.scss */
 article.post .title {
   padding: 1.5em;
 }
-/* line 182, ../sass/css.scss */
+/* line 183, ../sass/css.scss */
 article.post .title h1 {
   font-size: 1.5em;
 }
-/* line 184, ../sass/css.scss */
+/* line 185, ../sass/css.scss */
 article.post .title h1 a {
   color: #353535;
 }
@@ -593,20 +594,24 @@ article.post .title h1 a:hover {
 article.post .title h1 a:active {
   color: #333;
 }
-/* line 187, ../sass/css.scss */
+/* line 188, ../sass/css.scss */
+article.post .title .title-meta span {
+  margin-right: 0.625em;
+}
+/* line 191, ../sass/css.scss */
 article.post .featured_image {
   margin-bottom: 1.5em;
 }
-/* line 189, ../sass/css.scss */
+/* line 193, ../sass/css.scss */
 article.post .featured_image img {
   max-width: 100%;
 }
-/* line 191, ../sass/css.scss */
+/* line 195, ../sass/css.scss */
 article.post section {
   padding: 1.5em;
   margin-bottom: 1.5em;
 }
-/* line 194, ../sass/css.scss */
+/* line 198, ../sass/css.scss */
 article.post section .entry {
   float: left;
   width: 322px;
@@ -614,72 +619,77 @@ article.post section .entry {
   overflow: hidden;
   display: block;
 }
-/* line 201, ../sass/css.scss */
+/* line 205, ../sass/css.scss */
 article.post section .btn {
   margin-left: 357px;
   display: block;
 }
-/* line 205, ../sass/css.scss */
+/* line 209, ../sass/css.scss */
 article.post section .btn a {
   display: inline-block;
   text-align: center;
   padding: 0 9px;
 }
-/* line 209, ../sass/css.scss */
+/* line 213, ../sass/css.scss */
 article.post section .btn a span {
   display: inline-block;
   width: 50px;
   height: 50px;
   padding-top: 3px;
 }
-/* line 210, ../sass/css.scss */
+/* line 214, ../sass/css.scss */
 article.post section .btn a .weibo {
   background: url(../images/shareIco.png) center no-repeat;
 }
-/* line 211, ../sass/css.scss */
+/* line 215, ../sass/css.scss */
 article.post section .btn a .com {
   background: url(../images/txShareIco.png) center no-repeat;
 }
-/* line 212, ../sass/css.scss */
+/* line 216, ../sass/css.scss */
 article.post section .btn a .readmore {
   background: url(../images/enterIco.png) center no-repeat;
 }
-/* line 214, ../sass/css.scss */
+/* line 218, ../sass/css.scss */
 article.post section .btn a:hover p {
   color: #6d6d6d;
 }
-/* line 215, ../sass/css.scss */
+/* line 219, ../sass/css.scss */
 article.post section .btn a:hover .weibo {
   background: url(../images/shareIcoAct.png) center no-repeat;
 }
-/* line 216, ../sass/css.scss */
+/* line 220, ../sass/css.scss */
 article.post section .btn a:hover .com {
   background: url(../images/txShareIcoAct.png) center no-repeat;
 }
-/* line 217, ../sass/css.scss */
+/* line 221, ../sass/css.scss */
 article.post section .btn a:hover .readmore {
   background: url(../images/enterIcoAct.png) center no-repeat;
 }
 
 /*page-nav*/
-/* line 226, ../sass/css.scss */
+/* line 230, ../sass/css.scss */
 .page-nav {
   display: block;
+  text-align: center;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
 }
-/* line 230, ../sass/css.scss */
+/* line 235, ../sass/css.scss */
+.page-nav .wrap {
+  display: inline-block;
+}
+/* line 236, ../sass/css.scss */
 .page-nav ul {
   padding-left: 0;
 }
-/* line 232, ../sass/css.scss */
+/* line 238, ../sass/css.scss */
 .page-nav ul.page-numbers {
   border: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 233, ../sass/css.scss */
+/* line 239, ../sass/css.scss */
 .page-nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -704,10 +714,11 @@ article.post section .btn a:hover .readmore {
 .page-nav ul li li.last:after {
   content: "";
 }
-/* line 238, ../sass/css.scss */
+/* line 244, ../sass/css.scss */
 .page-nav ul li .page-numbers {
   display: inline-block;
   float: left;
+  color: #a6a6a6;
   border: 1px solid #e0e0e0;
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -719,12 +730,16 @@ article.post section .btn a:hover .readmore {
   line-height: 2.5em;
   margin-right: 0.4375em;
 }
-/* line 250, ../sass/css.scss */
-.page-nav a.page-numbers:hover, .page-nav .current {
+/* line 257, ../sass/css.scss */
+.page-nav .current {
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1);
   background: #68c9d5;
   border: 1px solid #68c9d5;
-  color: #FFF;
+  color: #FFF !important;
+}
+/* line 263, ../sass/css.scss */
+.page-nav a.page-numbers:hover {
+  background-color: #e8e8e8;
 }

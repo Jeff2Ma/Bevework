@@ -38,7 +38,7 @@ if ( function_exists('register_sidebar') ) {
         'description' => 'Bevework 侧边栏',
         'before_widget' => '<ul class="widget-container"><li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li></ul>',
-        'before_title' => '<h3 class="widgettitle"><span></span>',
+        'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>'
     ));
     }
@@ -117,7 +117,7 @@ function dw_page_navi() {
   $bignum = 999999999;
   if ( $wp_query->max_num_pages <= 1 )
     return;
-  echo '<div class="page-nav clearfix">';
+  echo '<div class="page-nav clearfix"><div class="wrap">';
   echo paginate_links( array(
     'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
     'format'       => '',
@@ -126,10 +126,10 @@ function dw_page_navi() {
     'prev_text'    => '&larr;',
     'next_text'    => '&rarr;',
     'type'         => 'list',
-    'end_size'     => 2,
-    'mid_size'     => 2
+    'end_size'     => 3,
+    'mid_size'     => 3
   ) );
-  echo '</div> <!--.page-nav-->';
+  echo '</div></div><!--.page-nav-->';
 }
 
 /**

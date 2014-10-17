@@ -162,6 +162,7 @@ body{
 $content-width:647px;
 #content{
 	width:$content-width;
+	margin-top:em(24px);
 
 
 }
@@ -182,6 +183,9 @@ article{
 			h1{
 				font-size: em(24px);
 				a{@include link-colors(#353535,#59b2db,#333,#333,#59b2db);}
+			}
+			.title-meta{
+				span{margin-right:em(10px);}
 			}
 		}
 		.featured_image{
@@ -225,8 +229,10 @@ article{
 /*page-nav*/
 .page-nav{
 	display:block;
+	text-align: center;
 	margin-bottom:$art-pladeholder;
 	margin-top:$art-pladeholder;
+	.wrap{display: inline-block;}//包裹，使其中间
 	ul{
 		padding-left: 0;
 		&.page-numbers{border:none; @include box-shadow(none);}		
@@ -238,6 +244,7 @@ article{
 	ul li .page-numbers{
 		display: inline-block;
 		float:left;
+		color:#a6a6a6;
 		border: 1px solid #e0e0e0;
     	@include box-shadow(0 1px 1px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1));
 		font-size: em(20px);
@@ -247,12 +254,13 @@ article{
 		line-height: em(40px);
 		margin-right: em(7px);
 	}
-	a.page-numbers:hover,.current{
+	.current{
 		@include box-shadow(0 1px 0 rgba(255,255,255,.1),inset 0 1px 0 rgba(0,0,0,.1));
 		background: #68c9d5;
 		border: 1px solid #68c9d5;
-		color: #FFF;
+		color: #FFF!important;
 	}
+	a.page-numbers:hover{background-color: #e8e8e8}
 }
 
 		
