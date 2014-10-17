@@ -660,3 +660,71 @@ article.post section .btn a:hover .com {
 article.post section .btn a:hover .readmore {
   background: url(../images/enterIcoAct.png) center no-repeat;
 }
+
+/*page-nav*/
+/* line 226, ../sass/css.scss */
+.page-nav {
+  display: block;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+}
+/* line 230, ../sass/css.scss */
+.page-nav ul {
+  padding-left: 0;
+}
+/* line 232, ../sass/css.scss */
+.page-nav ul.page-numbers {
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 233, ../sass/css.scss */
+.page-nav ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  list-style-type: none;
+}
+/* line 6, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_inline-list.scss */
+.page-nav ul li, .page-nav ul li li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_inline-list.scss */
+.page-nav ul li li:after {
+  content: ", ";
+}
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_inline-list.scss */
+.page-nav ul li li:last-child:after {
+  content: "";
+}
+/* line 36, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/lists/_inline-list.scss */
+.page-nav ul li li.last:after {
+  content: "";
+}
+/* line 238, ../sass/css.scss */
+.page-nav ul li .page-numbers {
+  display: inline-block;
+  float: left;
+  border: 1px solid #e0e0e0;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-size: 1.25em;
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  line-height: 2.5em;
+  margin-right: 0.4375em;
+}
+/* line 250, ../sass/css.scss */
+.page-nav a.page-numbers:hover, .page-nav .current {
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #68c9d5;
+  border: 1px solid #68c9d5;
+  color: #FFF;
+}

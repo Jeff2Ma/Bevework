@@ -20,6 +20,5 @@
 	<script src="http://www.anzhuo.cn/Public/default/js/ie/html5shiv.js"></script>
 	<link href="http://www.anzhuo.cn/Public/default/css/styleIE.css" type="text/css" rel="stylesheet"/>
 <![endif]-->
-<script src="http://www.anzhuo.cn/Public/default/js/fakeGlobal.js"></script>
 </head>
 <?php wp_head(); ?>
