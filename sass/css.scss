@@ -1,0 +1,160 @@
+@charset "utf-8";//必须设置了这个才能编译有中文的注释
+
+//全局引入
+@import "normalize";
+@import "compass/css3";
+@import "compass/typography";
+
+
+//定义全局变量
+$base-font-size: 16px;
+$main-color:#59b2db;
+$main-width:980px;
+$main-font:"Helvetica Neue", Helvetica,"Songti SC", "SimSun", serif;
+@mixin debug{
+	outline:1px red solid;
+}
+
+//计算em大小的工具，写的时候直接写px的数值 e.g font-size: em(16px);
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+
+//重新定义大体样式
+a{
+	@include transition(color .3s ease-in-out);
+}
+
+body{
+	background-color: #f0f0f0;
+	color:#6d6d6d;
+	line-height: 1.5;
+	font: em(14px) "Helvetica Neue", Helvetica,"Microsoft YaHei",Arial,Sans-serif;text-decoration:none;
+}
+.clearfix:after,.clearfix:before{content:" ";display:table}
+.clearfix:after{clear:both}
+.clearfix{*zoom:1}
+.boxSizing{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.float_left{float:left}
+.float_right{float:right}
+.float_none{float:none}
+//WordPress 基本样式
+@import "_wpbase.scss";
+
+//总体布局
+#container{width:$main-width;margin:0 auto;}
+#top{
+	width:100%;margin:0 auto;
+	background: #3e3e3e;
+	header{
+	width:$main-width;margin:0 auto;padding: em(18px) 0 em(16px);
+	.logo{
+		display: block;
+		@include debug;
+	}
+	.header-right{
+		form,span{float:left;}
+		form{
+			float: left;
+  			display: inline-block;
+  			position: relative;
+
+  			input[type="text"]{
+  				@include transition(width 0.5s ease 0s);
+  				  border-top: 1px solid #393939;
+  				  font-size: 12px;
+  				  padding: 8px 31px 8px 8px;
+  				  background: #4b4b4b;
+  				  color: #B2B2B2;
+  				  width: 85px;
+  				  outline: none;
+  				&:focus {width: 120px;}
+  				
+  			}
+			input[type="submit"] {
+  				background: url("../images/searchIco.png") 50% 50% no-repeat;
+  					border: none;
+  					outline: none;
+  					position: absolute;
+  					height: 17px;
+  					width: 17px;
+  					right: 8px;
+  					top: 8px;
+				}
+		}
+		span{
+			display:inline;
+			a{float: left;
+			  display: inline-block;
+			  font-size: 14px;
+			  text-shadow: none;
+			  color: #bcbcbc;
+			  background: #575757;
+			  border: 1px solid #353535;
+			  margin-left: 10px;
+				&.reg,&.log{border: 1px solid #606060;
+					padding: 10px 20px;
+					font-weight: normal;
+				}
+				&.log{
+					background: #10678b;
+					color: #9fc2d1;
+				}
+			}
+		}
+	}
+}
+.navgation{
+	background: #3e3e3e;
+	width: $main-width;
+	margin:0 auto;
+	padding: 8px 0;
+	ul{
+		@include no-bullet;
+		padding-left: 0;
+		li{
+			@include no-bullet;
+			@include delimited-list;
+			margin-right: -3px !important;
+			a{
+				box-sizing: border-box;
+				display: inline-block;
+				width: 14.2%;
+				text-align: center;
+				font-size: 16px;
+				padding: 10px 0;
+				text-shadow: none;
+				border-left: 1px solid #4c4c4c;
+				border-right: 1px solid #242424;
+				line-height: 1;
+				color: #FFF;
+				&.cur,&.cur:hover{
+					background: #262626;
+					padding: 10px 0 8px;
+					border-bottom: 2px solid #1ea9e2;
+				}
+				&:hover{background: #2d2d2d;}
+				&:last-child{border-right: none;}
+			}
+		}
+	}
+	.menu{
+		@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.1));
+		border: 1px solid #242424;
+		background: #363636;
+		width: 100%;
+		max-width: $main-width;
+		margin: 0 auto;
+	}
+}
+
+}
+
+
+
+
+
+
+
+/*header*/
