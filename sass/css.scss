@@ -9,10 +9,15 @@
 //定义全局变量
 $base-font-size: 16px;
 $main-color:#59b2db;
+$main-font-color:#6d6d6d;
 $main-width:980px;
 $main-font:"Helvetica Neue", Helvetica,"Songti SC", "SimSun", serif;
-@mixin debug{
+@mixin dwdebug{
 	outline:1px red solid;
+}
+
+@mixin text-indent{
+	text-indent:-9999em;
 }
 
 //计算em大小的工具，写的时候直接写px的数值 e.g font-size: em(16px);
@@ -22,7 +27,8 @@ $main-font:"Helvetica Neue", Helvetica,"Songti SC", "SimSun", serif;
 
 
 //重新定义大体样式
-a{
+a{	@include link-colors(#353535,#59b2db,#333,#333,#59b2db);
+	text-decoration:none;
 	@include transition(color .3s ease-in-out);
 }
 
@@ -51,7 +57,7 @@ body{
 	width:$main-width;margin:0 auto;padding: em(18px) 0 em(16px);
 	.logo{
 		display: block;
-		@include debug;
+		@include dwdebug;
 	}
 	.header-right{
 		form,span{float:left;}
@@ -151,10 +157,67 @@ body{
 
 }
 
+/*slider*/
+//@import "slider.scss";
+$content-width:647px;
+#content{
+	width:$content-width;
 
 
+}
 
 
+/*article*/
+$art-pladeholder:em(24px);
 
-
-/*header*/
+article{
+	&.post{
+		background: #f6f6f6;
+		border: 1px solid #e0e0e0;
+		@include box-shadow( 0 1px 0 #e8e8e8);
+		margin-bottom: $art-pladeholder;
+		position: relative;
+		.title{
+			padding:$art-pladeholder;
+			h1{
+				font-size: em(24px);
+				a{@include link-colors(#353535,#59b2db,#333,#333,#59b2db);}
+			}
+		}
+		.featured_image{
+			margin-bottom: $art-pladeholder;
+			img{max-width:100%;}
+		}
+		section{
+			padding:$art-pladeholder;
+			margin-bottom: $art-pladeholder;
+			.entry{
+				float: left;
+				width: 322px;
+				max-height: 96px;
+				overflow: hidden;
+				display: block;
+			}
+			.btn{
+				margin-left: 357px;
+				display: block;
+				// @include horizontal-list;
+					a{
+						display: inline-block;
+						text-align: center;
+						padding: 0 9px;
+						span{display:inline-block; width:50px; height:50px;padding-top: 3px;}
+						.weibo{background: url(../images/shareIco.png) center no-repeat;}
+						.com{background: url(../images/txShareIco.png) center no-repeat;}
+						.readmore{background: url(../images/enterIco.png) center no-repeat;}
+						&:hover{
+							p{color:$main-font-color;}
+							.weibo{background: url(../images/shareIcoAct.png) center no-repeat;}
+							.com{background: url(../images/txShareIcoAct.png) center no-repeat;}
+							.readmore{background: url(../images/enterIcoAct.png) center no-repeat;}
+							}
+					}
+			}
+		}
+	}
+}
