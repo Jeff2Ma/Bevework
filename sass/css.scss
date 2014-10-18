@@ -11,9 +11,13 @@ $base-font-size: 16px;
 $main-color:#59b2db;
 $main-font-color:#6d6d6d;
 $main-width:980px;
-$sidebar-width:320px;
-$content-width:647px;
+$sidebar-width:280px;
+$content-width:687px;
 $main-font:"Helvetica Neue", Helvetica,"Songti SC", "SimSun", serif;
+
+$single-img-width:640px;
+
+
 @mixin dwdebug{
 	outline:1px red solid;
 }
@@ -38,7 +42,8 @@ body{
 	background-color: #f0f0f0;
 	color:#6d6d6d;
 	line-height: 1.5;
-	font: em(14px) "Helvetica Neue", Helvetica,"Microsoft YaHei",Arial,Sans-serif;text-decoration:none;
+
+	font: 14px "Helvetica Neue", Helvetica,"Microsoft YaHei",Arial,Sans-serif;text-decoration:none;
 }
 .clearfix:after,.clearfix:before{content:" ";display:table}
 .clearfix:after{clear:both}
@@ -177,6 +182,7 @@ body{
 $art-pladeholder:em(24px);
 
 article{
+	$mrgin-left:em(60px);
 	&.post{
 		background: #f6f6f6;
 		border: 1px solid #e0e0e0;
@@ -185,30 +191,46 @@ article{
 		position: relative;
 		.title{
 			padding:$art-pladeholder;
+			>.author{
+				display: block;
+				position:relative;
+				top:8px;
+  				border: 1px solid #DCDCDC;
+  				float: left;
+  				@include border-radius(100px);
+  				img{
+  					display: block;
+  					border: 3px solid #FFF;
+  					@include border-radius(100px);
+  				}
+			}
 			h1{
+				margin-left: $mrgin-left;
 				font-size: em(24px);
+				font-weight: normal;
 				a{@include link-colors(#353535,#59b2db,#333,#333,#59b2db);}
 			}
 			.title-meta{
+				margin-left: $mrgin-left+em(30px);
 				span{margin-right:em(10px);}
 			}
 		}
 		.featured_image{
 			margin-bottom: $art-pladeholder;
-			img{max-width:100%;}
+			img{width:100%;}
 		}
 		section{
 			padding:$art-pladeholder;
 			margin-bottom: $art-pladeholder;
 			.entry{
 				float: left;
-				width: 322px;
+				width: 365px;
 				max-height: 96px;
 				overflow: hidden;
 				display: block;
 			}
 			.btn{
-				margin-left: 357px;
+				margin-left: 400px;
 				display: block;
 				// @include horizontal-list;
 					a{
@@ -342,5 +364,91 @@ footer{
 
 	p{text-align:center;
 		a,a:visited{color:#8c8c8c}
+	}
+}
+
+/*post-single*/
+
+// //no left border in sidebar if it is single.
+// .single aside{
+
+// }
+article.single{
+	
+	.title{
+		overflow: hidden;
+		margin-top: em(20px);
+		.border{
+			width: 7px;
+			height: 53px;
+			margin: -1px 12px 0 0;
+			background: #55bde8;
+			float: left;
+		}
+		.crumbs a{}
+		h1{font-size: em(24px);font-weight: normal;margin-left:0;}
+	}
+	.single-meta{
+		border: 1px solid #e0e0e0;
+		@include box-shadow(inset 0px 1px 1px rgba(255, 255, 255, 0.2));
+		position: relative;
+		margin-top: 25px;
+		.info{
+			text-shadow: 0 1px 1px #FFF;
+			height: 45px;
+			padding: 12px 10px;
+			color: #8f8f8f;
+			.author{
+				display: block;
+				border: 1px solid #DCDCDC;
+				float: left;
+				@include border-radius(100px);
+				margin-right: 10px;
+				img{
+					display: block;
+					border: 3px solid #FFF;
+					@include border-radius(100px);
+				}
+				.name{
+					display: block;
+					font-size: 14px;
+					margin-bottom: 15px;
+					line-height: 1;
+				}
+			}
+			.stat{
+				line-height: 1;
+				margin: 10px 0;
+				span{margin-right:em(10px);}
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: -10px;
+				left: 15px;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid #e0e0e0;
+			}
+			&:after{
+				position: absolute;
+				top: -8px;
+				left: 16px;
+				z-index: 10;
+				border-left: 9px solid transparent;
+				border-right: 9px solid transparent;
+				border-bottom: 9px solid #f7f7f7;
+			}
+
+		}
+	}
+	.entry{
+		padding-top: 0;
+		font-size: 15px;
+		line-height: em(28px);
+		p{margin-bottom:em(20px);text-indent:2em}
+		img{max-width:$single-img-width;}
 	}
 }

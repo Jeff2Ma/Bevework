@@ -1,6 +1,7 @@
 				<article <?php post_class('clearfix'); ?> id="post-<?php the_ID(); ?>">
 					<div class="title">
-						<h1><a href="">799元电信4G双卡：荣耀畅玩4电信版体验文</a></h1>
+						<a target="_blank" href="" class="author"><img src="<?php bloginfo('template_url'); ?>/images/author.jpg"></a>
+						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 						<div class="title-meta">
 							<span class="author">发布者：<a href="">Jeff</a></span>
 							<span class="date">2014/10/19</span>
