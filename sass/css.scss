@@ -310,4 +310,37 @@ aside{
 
 	}	
 }		
+/*links*/
+#links{
+	background: #e6e6e6;
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+	text-shadow: 0 1px 0 #fff;
+	.wrap{
+		width: $main-width;
+		margin: 0 auto;
+		padding:em(10px) 0;
+	}
+	ul{
+		padding:0;
+		margin: 0;
+	}
+	li{
+		float: left;
+		width: 12.5%;
+		@include no-bullet;
+		line-height: em(36px);
+	}
+}
+/*footer*/
+footer{
+	padding: em(30px) 0;
+	background: #161616;
+	color: #8c8c8c;
+	border-top: 1px solid #0a0a0a;
+	@include box-shadow(0 1px 2px #121212);
 
+	p{text-align:center;
+		a,a:visited{color:#8c8c8c}
+	}
+}

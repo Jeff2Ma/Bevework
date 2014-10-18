@@ -801,3 +801,52 @@ aside .w-title {
   padding: 0.75em 1.25em;
   border-bottom: 1px solid #e0e0e0;
 }
+
+/*links*/
+/* line 314, ../sass/css.scss */
+#links {
+  background: #e6e6e6;
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  text-shadow: 0 1px 0 #fff;
+}
+/* line 319, ../sass/css.scss */
+#links .wrap {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0.625em 0;
+}
+/* line 324, ../sass/css.scss */
+#links ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 328, ../sass/css.scss */
+#links li {
+  float: left;
+  width: 12.5%;
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  line-height: 2.25em;
+}
+
+/*footer*/
+/* line 336, ../sass/css.scss */
+footer {
+  padding: 1.875em 0;
+  background: #161616;
+  color: #8c8c8c;
+  border-top: 1px solid #0a0a0a;
+  -moz-box-shadow: 0 1px 2px #121212;
+  -webkit-box-shadow: 0 1px 2px #121212;
+  box-shadow: 0 1px 2px #121212;
+}
+/* line 343, ../sass/css.scss */
+footer p {
+  text-align: center;
+}
+/* line 344, ../sass/css.scss */
+footer p a, footer p a:visited {
+  color: #8c8c8c;
+}
