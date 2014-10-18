@@ -54,8 +54,8 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 			</div> <!-- #content -->
 		
-			<aside>
-			
+			<aside class="sidebar">
+				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bevework 侧边栏') ) :  endif; ?>
 			</aside>
 		</main>
 	</div><!-- #container -->

@@ -36,9 +36,9 @@ if ( function_exists('register_sidebar') ) {
         'name' => 'Bevework 侧边栏',
         'id' => 'dw_side_bar',
         'description' => 'Bevework 侧边栏',
-        'before_widget' => '<ul class="widget-container"><li id="%1$s" class="widget %2$s">',
+        'before_widget' => '<ul class="w-container"><li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li></ul>',
-        'before_title' => '<h3 class="widget-title">',
+        'before_title' => '<h3 class="w-title">',
         'after_title' => '</h3>'
     ));
     }
