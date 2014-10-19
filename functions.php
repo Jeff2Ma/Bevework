@@ -176,4 +176,101 @@ function baidu_share(){?>
 <?php }
 
 
+/**
+ * 评论回复自定义函数
+ *
+ * @version 1.0.0
+ * @author wp
+ *
+ */
+function dw_comment($comment, $args, $depth) {$GLOBALS['comment'] = $comment;
+    global $commentcount,$wpdb, $post;
+     if(!$commentcount) { 
+          $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_post_ID = $post->ID AND comment_type = '' AND comment_approved = '1' AND !comment_parent");
+          $cnt = count($comments);
+          $page = get_query_var('cpage');
+          $cpp=get_option('comments_per_page');
+         if (ceil($cnt / $cpp) == 1 || ($page > 1 && $page  == ceil($cnt / $cpp))) {
+             $commentcount = $cnt + 1;
+         } else {$commentcount = $cpp * $page + 1;}
+     }
+?>
+<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>" itemprop="reviews" itemscope itemtype="http://schema.org/Review" >
+   <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+      <?php $add_below = 'div-comment'; ?>
+        <div class="comment-author vcard">         
+         <div id="avatar"><?php echo get_avatar( $comment, 40 ); ?></div>
+    <div class="floor">
+    <?php 
+    if(!$parent_id = $comment->comment_parent){switch ($commentcount){
+     case 2 :echo "传说中的沙发";--$commentcount;break;
+     case 3 :echo "板凳也不错";--$commentcount;break;
+     case 4 :echo "赶上地板鸟";--$commentcount;break;
+     default:printf('%1$s#', --$commentcount);}}
+    ?>
+    </div>
+    <strong itemprop="author"><?php comment_author_link() ?></strong>:<?php edit_comment_link('编辑','&nbsp;&nbsp;',''); ?></div>
+    <?php if ( $comment->comment_approved == '0' ) : ?>
+        <span style="color:#C00; font-style:inherit">您的评论正在等待审核中...</span>
+        <br />          
+        <?php endif; ?>
+        <div  itemprop="reviewBody"><?php comment_text() ?></div>
+        <div class="clear"></div><span class="datetime" itemprop="datePublished"><?php comment_date('Y-m-d') ?> <?php comment_time() ?> </span> <span class="reply"><?php comment_reply_link(array_merge( $args, array('reply_text' => '[回复]', 'add_below' =>$add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?></span>
+  </div>
+<?php
+}
+function dw_end_comment() {echo '</li>';};
+//登陆显示头像
+function dw_own_avatar($email, $size = 48){
+return get_avatar($email, $size);
+};
+
+
+/**
+ * 反垃圾评论
+ *
+ * @version 1.0.0
+ * @author willliamkan
+ *
+ */
+class anti_spam {
+  function anti_spam() {
+    if ( !current_user_can('level_0') ) {
+      add_action('template_redirect', array($this, 'w_tb'), 1);
+      add_action('init', array($this, 'gate'), 1);
+      add_action('preprocess_comment', array($this, 'sink'), 1);
+    }
+  }
+  function w_tb() {
+    if ( is_singular() ) {
+      ob_start(create_function('$input','return preg_replace("#textarea(.*?)name=([\"\'])comment([\"\'])(.+)/textarea>#",
+      "textarea$1name=$2w$3$4/textarea><textarea name=\"comment\" cols=\"100%\" rows=\"4\" style=\"display:none\"></textarea>",$input);') );
+    }
+  }
+  function gate() {
+    if ( !empty($_POST['w']) && empty($_POST['comment']) ) {
+      $_POST['comment'] = $_POST['w'];
+    } else {
+      $request = $_SERVER['REQUEST_URI'];
+      $referer = isset($_SERVER['HTTP_REFERER'])         ? $_SERVER['HTTP_REFERER']         : '隐瞒';
+      $IP      = isset($_SERVER["HTTP_X_FORWARDED_FOR"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] . ' (透过代理)' : $_SERVER["REMOTE_ADDR"];
+      $way     = isset($_POST['w'])                      ? '手动操作'                       : '未经评论表格';
+      $spamcom = isset($_POST['comment'])                ? $_POST['comment']                : null;
+      $_POST['spam_confirmed'] = "请求: ". $request. "\n来路: ". $referer. "\nIP: ". $IP. "\n方式: ". $way. "\n內容: ". $spamcom. "\n -- 记录成功 --";
+    }
+  }
+  function sink( $comment ) {
+    if ( !empty($_POST['spam_confirmed']) ) {
+      if ( in_array( $comment['comment_type'], array('pingback', 'trackback') ) ) return $comment;
+      
+      die();
+      //方法二: 标记为 spam, 留在资料库检查是否误判.
+      //add_filter('pre_comment_approved', create_function('', 'return "spam";'));
+      //$comment['comment_content'] = "[ 小墙判断这是 Spam! ]\n". $_POST['spam_confirmed'];
+    }
+    return $comment;
+  }
+}
+$anti_spam = new anti_spam();
+
  ?>
