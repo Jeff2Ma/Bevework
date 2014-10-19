@@ -829,3 +829,175 @@ article.single .entry {
   /* line 452, ../sass/css.scss */
   article.single .entry img {
     max-width: 640px; }
+
+/*--comment --*/
+/* line 2, ../sass/_comments.scss */
+.commentlist .comment {
+  border-top: 1px dashed #eee;
+  list-style: none;
+  font-size: 13px; }
+
+/* line 3, ../sass/_comments.scss */
+.commentlist li.comment ul.children {
+  margin-left: 15px; }
+
+/* line 4, ../sass/_comments.scss */
+.commentlist li.comment ul.children img.avatar {
+  width: 25px;
+  height: 25px; }
+
+/* line 5, ../sass/_comments.scss */
+.commentlist .depth-1 {
+  margin: 10px 0; }
+
+/* line 6, ../sass/_comments.scss */
+.commentlist li {
+  position: relative; }
+
+/* line 7, ../sass/_comments.scss */
+.commentlist .comment-body {
+  padding: 5px 0;
+  margin-left: -44px;
+  margin-right: -17px; }
+
+/* line 8, ../sass/_comments.scss */
+.commentlist .comment-body:hover {
+  background: #fafafa; }
+
+/* line 9, ../sass/_comments.scss */
+.commentlist p {
+  line-height: 24px;
+  margin: 5px 0 5px 60px; }
+
+/* line 10, ../sass/_comments.scss */
+.commentlist a {
+  color: #09C; }
+
+/**/
+/* line 11, ../sass/_comments.scss */
+.reply a:link, .reply a:visited {
+  text-align: center; }
+
+/* line 12, ../sass/_comments.scss */
+.datetime {
+  margin-left: 60px;
+  color: #aaa; }
+
+/* line 13, ../sass/_comments.scss */
+.commentmetadata {
+  margin-left: 50px;
+  color: #aaa; }
+
+/* line 14, ../sass/_comments.scss */
+ol.commentlist li .vcard .avatar {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border: 1px solid #DCDCDC;
+  float: left;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  margin-right: 10px;
+  margin-top: 20px; }
+
+/* line 23, ../sass/_comments.scss */
+ol.commentlist li .vcard .avatar img {
+  display: block;
+  border: 3px solid #FFF;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px; }
+
+/* line 29, ../sass/_comments.scss */
+#respond {
+  overflow: hidden;
+  padding: 10px 0; }
+
+/* line 29, ../sass/_comments.scss */
+#respond_box {
+  clear: both;
+  border-top: 1px dashed #eee; }
+
+/* line 29, ../sass/_comments.scss */
+#comment {
+  background: #fff; }
+
+/* line 30, ../sass/_comments.scss */
+#commentform #comment-author-info {
+  padding: 5px 0; }
+
+/* line 31, ../sass/_comments.scss */
+#commentform p, #commentform p a {
+  color: #999;
+  font-size: 14px; }
+
+/* line 32, ../sass/_comments.scss */
+#commentform input {
+  background: #f9f9f9;
+  border: 1px solid #EBECEC;
+  width: 250px;
+  margin: 5px 0;
+  padding: 3px;
+  height: 28px;
+  line-height: 28px; }
+
+/* line 33, ../sass/_comments.scss */
+#commentform textarea {
+  width: 98%;
+  height: 130px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-top: 1px solid #f7f7f7;
+  font-size: 14px;
+  margin: 4px 0 0;
+  padding: 4px; }
+
+/* line 35, ../sass/_comments.scss */
+#commentform input, textarea {
+  outline: none; }
+
+/* line 36, ../sass/_comments.scss */
+#commentform input:focus {
+  background: #d4d4d4; }
+
+/* line 37, ../sass/_comments.scss */
+#commentform textarea:focus {
+  background: #d4d4d4; }
+
+/* line 38, ../sass/_comments.scss */
+#commentform input#submit, #commentform input#reset {
+  background: #e51148;
+  border: 1px solid #d6093e;
+  width: 140px;
+  height: 35px;
+  color: #fff;
+  float: right;
+  margin: 6px;
+  box-shadow: inset 0 2px 0 #ef7091; }
+
+/* line 46, ../sass/_comments.scss */
+#commentform #submit:hover, #commentform #reset:hover {
+  background: #ef7091;
+  cursor: pointer; }
+
+/* line 47, ../sass/_comments.scss */
+#real-avatar {
+  display: block;
+  border: 1px solid #DCDCDC;
+  float: right;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  margin-right: 10px;
+  margin-top: 20px; }
+
+/* line 56, ../sass/_comments.scss */
+#real-avatar .avatar {
+  display: block;
+  border: 3px solid #FFF;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px; }

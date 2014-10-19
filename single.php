@@ -32,8 +32,26 @@
 							<img src="<?php bloginfo('template_url'); ?>/images/sam.jpg">
 						</div><!-- . -->
 						  <?php the_content('');?>
+
+						  <?php baidu_share(); ?>
+
+						  <div class="related-post">
+						  	
+						  </div> <!-- .related-post -->
 					</section>
+
+					
+
 				</article>
+
+
+<?php 
+        if(comments_open( get_the_ID() ))  {
+            comments_template('', true); 
+        }
+    ?>
+
+
 
 <?php endwhile; ?>
             <?php else : ?>
