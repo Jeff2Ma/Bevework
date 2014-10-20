@@ -202,11 +202,11 @@ function dw_comment($comment, $args, $depth) {$GLOBALS['comment'] = $comment;
          <div id="avatar"><?php echo get_avatar( $comment, 40 ); ?></div>
     <div class="floor">
     <?php 
-    if(!$parent_id = $comment->comment_parent){switch ($commentcount){
-     case 2 :echo "传说中的沙发";--$commentcount;break;
-     case 3 :echo "板凳也不错";--$commentcount;break;
-     case 4 :echo "赶上地板鸟";--$commentcount;break;
-     default:printf('%1$s#', --$commentcount);}}
+    // if(!$parent_id = $comment->comment_parent){switch ($commentcount){
+     // case 2 :echo "传说中的沙发";--$commentcount;break;
+     // case 3 :echo "板凳也不错";--$commentcount;break;
+     // case 4 :echo "赶上地板鸟";--$commentcount;break;
+     // default:printf('%1$s#', --$commentcount);}}
     ?>
     </div>
     <strong itemprop="author"><?php comment_author_link() ?></strong>:<?php edit_comment_link('编辑','&nbsp;&nbsp;',''); ?></div>

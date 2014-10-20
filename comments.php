@@ -9,8 +9,9 @@
 
 	/* This variable is for alternating comment background */
 	$oddcomment = '';
-?>
+?><div id="comment-box">
 <?php if ($comments) : ?>
+	
 	<h4 id="comments" class="detitle "> 当前有<?php comments_number('', '<strong class="count">1</strong>条留言', '<strong class="count">%</strong>条留言' );?><em></em></h4>
 	<ol class="commentlist">
 	<?php wp_list_comments('type=comment&callback=dw_comment&end-callback=dw_end_comment&max_depth=23'); ?>
@@ -103,3 +104,4 @@
   </div>
   </div>
   <?php endif; // if you delete this the sky will fall on your head ?>
+  </div>

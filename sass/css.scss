@@ -52,6 +52,8 @@ body{
 .float_left{float:left}
 .float_right{float:right}
 .float_none{float:none}
+
+.detitle{border-left:3px $main-color solid;padding-left:em(10px);font-size: em(18px)} 
 //WordPress 基本样式
 @import "_wpbase.scss";
 

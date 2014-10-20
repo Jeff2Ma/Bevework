@@ -1,37 +1,51 @@
+
+@mixin box-style{
+	background: #f6f6f6;
+	border: 1px solid #e0e0e0;
+	margin-bottom:em(30px);
+	@include box-shadow(0 1px 0 #e8e8e8 );
+}
 /*--comment --*/
+#comment-box{
+		@include box-style;
+		padding:$art-pladeholder;
+}
 .commentlist .comment{border-top:1px dashed #eee;list-style:none;font-size:13px;}
 .commentlist li.comment ul.children{margin-left:15px}
+.commentlist li.comment ul.children #avatar{width:25px;height:25px}
 .commentlist li.comment ul.children img.avatar{width:25px;height:25px}
 .commentlist .depth-1{margin:10px 0}
 .commentlist li{position:relative}
-.commentlist .comment-body{padding:5px 0;margin-left:-44px;margin-right:-17px}
-.commentlist .comment-body:hover{background:#fafafa}
+.commentlist .comment-body{padding:5px 0;margin-left:-40px;margin-right:0}
 .commentlist p{line-height:24px;margin:5px 0 5px 60px}
-.commentlist a{color:#09C}/**/
+
 .reply a:link,.reply a:visited{text-align:center}
 .datetime{margin-left:60px;color:#aaa}
 .commentmetadata{margin-left:50px;color:#aaa}
-ol.commentlist li .vcard .avatar{position:relative;float:left;
+ol.commentlist li .vcard #avatar{position:relative;float:left;
 	width:40px;height:40px;display: block;
 border: 1px solid #DCDCDC;
 float:left;
 -moz-border-radius: 100px;
 -webkit-border-radius: 100px;
 border-radius: 100px;
-margin-right: 10px;
-margin-top: 20px;}
-ol.commentlist li .vcard .avatar img{display: block;
+margin-right: 20px; }
+ol.commentlist li .vcard #avatar img{display: block;
 border: 3px solid #FFF;
 -moz-border-radius: 100px;
 -webkit-border-radius: 100px;
 border-radius: 100px;}
 // ol.commentlist li div.floor{float:right;font-size:16px;color:#FFA300;font-weight:700}
-#respond{overflow:hidden;padding:10px 0}#respond_box{clear:both;border-top:1px dashed #eee}#comment{background:#fff}
+#respond{overflow:hidden;padding:10px 0}
+#respond_box{
+
+	clear:both;border-top:1px dashed #eee}
+	#comment{background:#fff}
 #commentform #comment-author-info {padding:5px 0}
 #commentform p,#commentform p a{color:#999;font-size:14px}
 #commentform input{background:#f9f9f9;border:1px solid #EBECEC;width:250px;margin:5px 0;padding:3px;height:28px;line-height:28px}
 #commentform textarea{width:98%;height:130px;background:#f9f9f9;border: 1px solid #e0e0e0;
-border-top: 1px solid #f7f7f7;font-size:14px;margin:4px 0 0;padding:4px}
+font-size:14px;margin:4px 0 0;padding:4px}
 #commentform input,textarea{outline:none;}
 #commentform input:focus{background: #d4d4d4}
 #commentform textarea:focus{background: #d4d4d4}
