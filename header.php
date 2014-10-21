@@ -9,7 +9,7 @@
 	<title><?php dw_meta_title(); ?></title>
 	<meta charset="UTF-8">
 	<meta name="renderer" content="webkit">
-<meta http-equiv="Cache-Control" content="no-siteapp" /> <!--禁止转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp" /> <!--fuckbaidu-->
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/css.css" />
 
@@ -35,19 +35,21 @@
     			<span class=""><a class="log">注册</a></span>
     		</div>
     	</header>
-    	<nav class="navgation">
-			<div class="rsp_body">
-        		<ul class="menu clearfix">
-				<li><a class="cur" href="/">首页</a></li>
-				<li><a target="_blank" href="http://bbs.anzhuo.cn/"><span>安卓</span>论坛</a></li>
-            	<li><a href="/next">next<span>评测</span></a></li>
-				<li><a href="/tuwen">图文<span>评测</span></a></li>
-				<li><a href="/video">视频<span>评测</span></a>	</li>	
-				<li><a href="/info">新闻<span>资讯</span></a></li>
-				<li><a href="/guide">行情<span>导购</span></a></li>
-        		</ul>
-    		</div>
-    	</nav>
+
+	<nav class="navgation">
+		<?php wp_nav_menu( 
+    		array( 
+    		'theme_location' => 'menu-primary',
+    		'container_class' => 'rsp_body', 
+    		'menu_class' => 'menu clearfix' 
+    		//'menu_id' => 'menu-primary-items', 
+    		//'fallback_cb' => 'nav_fallback' 
+    	) ); ?>
+	</nav>
+
+
+
+
     </div> <!-- #header-top	 -->
 			<div class="slider"><!-- 幻灯片 -->
 				<?php //include(TEMPLATEPATH .'/includes/bw-slider.php');?>

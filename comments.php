@@ -2,7 +2,7 @@
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 	if ( post_password_required() ) { ?>
-  <p class="nocomments"> 亲，您必须输入密码才能查看评论 </p>
+  <div id="comment-box"><p class="nocomments"> 亲，您必须输入密码才能查看评论 </p></div>
 <?php
   return;
 }
