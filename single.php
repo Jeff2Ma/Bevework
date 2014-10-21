@@ -2,22 +2,23 @@
 <?php get_header();?>
 			<div class="" id="content"><!-- 正文 -->
 
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post();setPostViews(get_the_ID()); ?>
 
 				<article <?php post_class('single clearfix'); ?> id="post-<?php the_ID(); ?>">
 
 					<div class="title">
 						<span class="border"></span>
-						<div class="crumbs">首页》正文</div>
+						<div class="crumbs"><?php dw_breadcrumb(); ?></div>
 						<h1><?php the_title(); ?></h1>
 						<div class="single-meta">
 							<div class="info clearfix">
-            					<a class="author" href=""><img width="38" height="38" src="<?php bloginfo('template_url'); ?>/images/author.jpg"></a>
-								<a class="name" href="">发布者：Kirk</a>
+            					<a class="author" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 40 ); ?></a>
+								<a class="name" href="">发布者：<?php the_author(); ?></a>
 								<div class="stat">
-									<span class="date">日期：2013/08/05</span>
-									<span class="view">浏览(251)</span>
-									<span class="com"><a href=" ">评论(20)</a></span>
+									<span class="date"><?php the_time('Y/m/j'); ?></span>
+									<span class="view">浏览数(<?php echo number_format(getPostViews(get_the_ID())); ?>)</span>
+									<span class="cat">分类：<?php the_category(', '); ?></span>
+									<span class="com"><?php comments_popup_link('暂无评论', '评论(<em>1</em>)', '评论(<em>%</em>)'); ?></span>
 								</div> <!-- .stat -->
 							</div> <!-- .info -->
 						</div><!-- single.meta -->

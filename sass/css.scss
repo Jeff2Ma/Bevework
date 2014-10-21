@@ -77,13 +77,14 @@ body{
 
   			input[type="text"]{
   				@include transition(width 0.5s ease 0s);
-  				  border-top: 1px solid #393939;
-  				  font-size: 12px;
-  				  padding: 8px 31px 8px 8px;
+  				  border: none;
+  				  font-size: 14px;
+  				  padding: 10px 31px 10px 10px;
   				  background: #4b4b4b;
   				  color: #B2B2B2;
   				  width: 85px;
   				  outline: none;
+
   				&:focus {width: 120px;}
   				
   			}
@@ -95,7 +96,7 @@ body{
   					height: 17px;
   					width: 17px;
   					right: 8px;
-  					top: 8px;
+  					top: 10px;
 				}
 		}
 		span{
@@ -188,9 +189,37 @@ body{
 /*article*/
 $art-pladeholder:em(24px);
 
+
+//search-page
+#search-page{
+	padding:$art-pladeholder;
+	p{text-align:center}
+}
+
+.post-placeholder{
+	background: #f6f6f6;
+	border: 1px solid #e0e0e0;
+	@include box-shadow( 0 1px 0 #e8e8e8);
+	padding:$art-pladeholder;
+	margin-bottom:$art-pladeholder;
+}
+
+//404页面
+.error404{
+	article{padding-top:em(30px);padding-bottom:$art-pladeholder;}
+	.error404img{	
+	background: url(../images/sorry.png) top center no-repeat;
+	padding-top: 250px;
+	text-align: center;
+	p{font-size: em(30px)}
+	p:first-child{font-size: em(40px)}
+	}
+
+}
+
 article{
 	$mrgin-left:em(60px);
-	&.post{
+	&.post,&.page{
 		background: #f6f6f6;
 		border: 1px solid #e0e0e0;
 		@include box-shadow( 0 1px 0 #e8e8e8);
@@ -220,6 +249,7 @@ article{
 			.title-meta{
 				margin-left: $mrgin-left+em(30px);
 				span{margin-right:em(10px);}
+				.com em{font-style:normal;color:#cd0429;}
 			}
 		}
 		.featured_image{
@@ -247,6 +277,7 @@ article{
 						span{display:inline-block; width:50px; height:50px;padding-top: 3px;}
 						.weibo{background: url(../images/shareIco.png) center no-repeat;}
 						.com{background: url(../images/txShareIco.png) center no-repeat;}
+
 						.readmore{background: url(../images/enterIco.png) center no-repeat;}
 						&:hover{
 							p{color:$main-font-color;}
@@ -392,7 +423,12 @@ article.single{
 			background: #55bde8;
 			float: left;
 		}
-		.crumbs a{}
+		.crumbs{
+			li{
+				@include no-bullet;
+			@include delimited-list;
+			}
+		}
 		h1{font-size: em(24px);font-weight: normal;margin-left:0;}
 	}
 	.single-meta{
@@ -423,6 +459,7 @@ article.single{
 					line-height: 1;
 				}
 			}
+			.com em{font-style:normal;color:#cd0429;}
 			.stat{
 				line-height: 1;
 				margin: 10px 0;

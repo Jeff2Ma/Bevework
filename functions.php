@@ -136,7 +136,7 @@ function dw_page_navi() {
  * 浏览次数函数设置
  *
  * @version 1.0.0
- * @author wp
+ * @author http://devework.com/wordpress-post-views.html
  * @internal 要使用在loop 中方可正确运行，数据通过post-meta保存在数据库中
  *
  */
@@ -162,6 +162,41 @@ function getPostViews($postID){
          update_post_meta($postID, $count_key, $count);   
      }   
  } 
+
+/**
+ * 面包屑导航函数
+ *
+ * @version 1.0.0
+ * @author http://devework.com/wordpress-breadcrumbs.html
+ *
+ */
+function dw_breadcrumb() { ?>
+<a href="<?php echo get_option('Home'); ?>">首页</a> &raquo;
+<?php
+  if( is_single() ){
+  $categorys = get_the_category();
+  $category = $categorys[0];
+  echo( get_category_parents($category->term_id,true,' &raquo; ') );echo '正文';
+  } elseif ( is_page() ){
+  the_title();
+  } elseif ( is_category() ){
+  single_cat_title();
+  } elseif ( is_tag() ){
+  single_tag_title();
+  } elseif ( is_day() ){
+  the_time('Y年Fj日');
+  } elseif ( is_month() ){
+  the_time('Y年F');
+  } elseif ( is_year() ){
+  the_time('Y年');
+  } elseif ( is_search() ){
+  echo $s.' 的搜索结果';
+  }elseif ( is_404() ) {
+  echo '没有相关内容';
+  }
+?>
+<?php }
+
 
 /**
  * 百度分享代码
@@ -272,5 +307,15 @@ class anti_spam {
   }
 }
 $anti_spam = new anti_spam();
+
+function dw_content(){
+  if (post_password_required()):the_content(); else :
+      if(preg_match('/<!--more.*?-->/',$post->post_content))
+          the_content(''); 
+      else{
+        echo'<p>';
+        echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0,290,"...");
+        echo'</p>';}endif;
+}
 
  ?>
