@@ -52,8 +52,7 @@
 
     </div> <!-- #header-top	 -->
 			<div class="slider"><!-- 幻灯片 -->
-				<?php //include(TEMPLATEPATH .'/includes/bw-slider.php');?>
-				
+				<?php //include(TEMPLATEPATH .'/includes/bw-slider.php');?>				
 			</div>
 
 <div id="container">

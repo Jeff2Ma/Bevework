@@ -308,14 +308,22 @@ class anti_spam {
 }
 $anti_spam = new anti_spam();
 
-function dw_content(){
-  if (post_password_required()):the_content(); else :
-      if(preg_match('/<!--more.*?-->/',$post->post_content))
-          the_content(''); 
-      else{
-        echo'<p>';
-        echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0,290,"...");
-        echo'</p>';}endif;
-}
+/**
+ * 自定义标签云
+ *
+ * @version 1.0.0
+ * @author wp
+ *
+ */
+add_filter('widget_tag_cloud_args','style_tags'); 
+function style_tags($args) { 
+$args = array( 
+'largest'=> '11', 
+'smallest'=> '11',
+'order'  => 'RAND',   
+'number' => '30',  
+); 
+return $args; 
+} 
 
  ?>

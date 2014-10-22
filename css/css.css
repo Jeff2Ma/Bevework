@@ -471,6 +471,154 @@ body {
       margin: 0 auto; }
 
 /*slider*/
+/* line 1, ../sass/_slider.scss */
+.gallery {
+  width: 100%;
+  background: #333;
+  position: relative; }
+
+/* line 7, ../sass/_slider.scss */
+.gallery .rsp_body {
+  overflow: hidden; }
+
+/* line 11, ../sass/_slider.scss */
+.rsp_body {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  height: auto;
+  min-height: 0; }
+
+/* line 19, ../sass/_slider.scss */
+.row {
+  width: 100%;
+  height: auto !important;
+  height: 0;
+  min-height: 0; }
+
+/* line 26, ../sass/_slider.scss */
+.row:after {
+  clear: both; }
+
+/* line 30, ../sass/_slider.scss */
+.row:after, .row:before {
+  display: table;
+  content: " "; }
+
+/* line 36, ../sass/_slider.scss */
+.wSlider {
+  overflow: hidden;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0); }
+
+/* line 43, ../sass/_slider.scss */
+.wRecGallery .time {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: #55bde8;
+  z-index: 99; }
+
+/* line 54, ../sass/_slider.scss */
+.items {
+  width: 1000%;
+  overflow: hidden;
+  position: relative; }
+
+/* line 60, ../sass/_slider.scss */
+.item {
+  width: 10%;
+  float: left; }
+
+/* line 65, ../sass/_slider.scss */
+.item figure {
+  position: relative; }
+
+/* line 69, ../sass/_slider.scss */
+.gallery .item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 3em;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  font-size: 24px; }
+
+/* line 82, ../sass/_slider.scss */
+.gallery .nav {
+  position: absolute;
+  bottom: 17px;
+  right: 5em;
+  z-index: 99; }
+
+/* line 89, ../sass/_slider.scss */
+.gallery .nav-arrow {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  bottom: 0; }
+
+/* line 96, ../sass/_slider.scss */
+.gallery .prev {
+  background: url(../images/gallery-left.png) center center no-repeat;
+  left: 0;
+  width: 55px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* line 103, ../sass/_slider.scss */
+.gallery .next {
+  background: url(../images/gallery-right.png) center center no-repeat;
+  right: 0;
+  width: 55px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* line 110, ../sass/_slider.scss */
+.gallery .nav a {
+  background: #a3a3a3;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  line-height: 55px;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 0; }
+
+/* line 124, ../sass/_slider.scss */
+.gallery .nav .cur, .gallery .nav a:hover {
+  background: #fff;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5); }
+
+/* line 133, ../sass/_slider.scss */
+.guide .news-list a, .headlines .news-list a {
+  max-width: 210px; }
+
+/* line 137, ../sass/_slider.scss */
+.headlines .header-icon {
+  background-position: 0 0; }
+
+/* line 141, ../sass/_slider.scss */
+.guide h3, .headlines h3 {
+  color: #c5c5c5;
+  display: inline-block; }
+
+/* line 146, ../sass/_slider.scss */
+.guide a:active h3, .guide a:hover h3, .headlines a:active h3, .headlines a:hover h3, .illustrate a:active h4, .illustrate a:hover h4 {
+  color: #55bde8; }
+
 /* line 177, ../sass/css.scss */
 #main {
   margin-top: 1.5em; }
@@ -1072,3 +1220,40 @@ ol.commentlist li .vcard #avatar img {
   -moz-border-radius: 100px;
   -webkit-border-radius: 100px;
   border-radius: 100px; }
+
+/* line 505, ../sass/css.scss */
+.tagcloud {
+  padding: 0.75em; }
+
+/* line 508, ../sass/css.scss */
+.widget_tag_cloud .tagcloud {
+  display: block;
+  clear: both;
+  min-height: 210pt; }
+
+/* line 509, ../sass/css.scss */
+#footer-body .widget_tag_cloud .tagcloud {
+  padding: 0; }
+
+/* line 510, ../sass/css.scss */
+.widget_tag_cloud .tagcloud a {
+  padding: 4px 6px;
+  margin: 0 5px 5px 0;
+  background: #efefef;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px !important;
+  text-align: center; }
+
+/* line 511, ../sass/css.scss */
+#footer-body .widget_tag_cloud .tagcloud a {
+  background: transparent; }
+
+/* line 512, ../sass/css.scss */
+.widget_tag_cloud .tagcloud a:hover {
+  background-color: #59b2db;
+  color: #fff;
+  -webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out; }

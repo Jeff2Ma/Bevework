@@ -173,7 +173,7 @@ body{
 }
 
 /*slider*/
-//@import "slider.scss";
+@import "_slider.scss";
 #main{
 	margin-top:em(24px);
 }
@@ -500,3 +500,14 @@ article.single{
 
 //comments
 @import "_comments";
+
+//标签云
+.tagcloud{
+	padding:$aside-padding;
+}
+.widget_tag_cloud .tagcloud{display: block;clear: both;min-height:210pt;}
+#footer-body .widget_tag_cloud .tagcloud{padding:0}
+.widget_tag_cloud .tagcloud a{padding:4px 6px;margin:0 5px 5px 0;background:#efefef;text-decoration:none;display: inline-block;font-size:14px !important;text-align:center}
+#footer-body .widget_tag_cloud .tagcloud a{background:transparent}
+.widget_tag_cloud .tagcloud a:hover{background-color:$main-color;color:#fff;-webkit-transition:all .15s ease-in-out;-moz-transition:all .15s ease-in-out;-o-transition:all .15s ease-in-out;transition:all .15s ease-in-out;
+}
