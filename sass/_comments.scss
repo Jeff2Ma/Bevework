@@ -18,7 +18,8 @@
 .commentlist li{position:relative}
 .commentlist .comment-body{padding:5px 0;margin-left:-40px;margin-right:0}
 .commentlist p{line-height:24px;margin:5px 0 5px 60px}
-
+.commentlist a{color:#55bde8}
+.commentlist .reply a{color:#aaa}
 .reply a:link,.reply a:visited{text-align:center}
 .datetime{margin-left:60px;color:#aaa}
 .commentmetadata{margin-left:50px;color:#aaa}

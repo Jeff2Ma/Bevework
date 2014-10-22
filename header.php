@@ -21,6 +21,7 @@
 	<link href="http://www.anzhuo.cn/Public/default/css/styleIE.css" type="text/css" rel="stylesheet"/>
 <![endif]-->
 </head>
+<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
 <?php wp_head(); ?>
 <body <?php body_class('index'); ?>>
 	<div id="top">

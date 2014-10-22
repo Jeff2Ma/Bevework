@@ -18,10 +18,8 @@
 							<a href="<?php the_permalink(); ?>">
 								<?php
 								if (post_password_required()):the_content(); else :
-      								if(preg_match('/<!--more.*?-->/',$post->post_content))
-          								the_content('');
-      							else{
-      								echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0,290,"...");
+      								{
+      									echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0,250,"...");
         						}endif;
 								 ?>
 							</a>
