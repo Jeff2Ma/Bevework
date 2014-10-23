@@ -5,7 +5,7 @@
 						<h1><a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 						<div class="title-meta">
 							<span class="date"><?php the_time('Y/m/j'); ?></span>
-							<span class="author">作者：<?php the_author(); ?></span>
+							<span class="author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">作者：<?php the_author(); ?></a></span>
 							<span class="view">浏览数(<?php echo number_format(getPostViews(get_the_ID())); ?>)</span>
 							<span class="com"><?php comments_popup_link('暂无评论', '评论(<em>1</em>)', '评论(<em>%</em>)'); ?></span>
 						</div><!-- .title-meta -->

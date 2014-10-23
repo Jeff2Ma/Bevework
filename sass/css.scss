@@ -52,6 +52,7 @@ body{
 .float_left{float:left}
 .float_right{float:right}
 .float_none{float:none}
+.center{text-align:center}
 
 .detitle{border-left:3px $main-color solid;padding-left:em(10px);font-size: em(18px)} 
 //WordPress 基本样式
@@ -66,7 +67,7 @@ body{
 	width:$main-width;margin:0 auto;padding: em(18px) 0 em(16px);
 	.logo{
 		display: block;
-		@include dwdebug;
+		//@include dwdebug;
 	}
 	.header-right{
 		form,span{float:left;}
@@ -251,6 +252,8 @@ article{
 				margin-left: $mrgin-left+em(30px);
 				span{margin-right:em(10px);}
 				.com em{font-style:normal;color:#cd0429;}
+
+				a,a:visited{color:#6d6d6d;}
 			}
 		}
 		.featured_image{
@@ -407,6 +410,33 @@ footer{
 
 	p{text-align:center;
 		a,a:visited{color:#8c8c8c}
+	}
+	.f-content{
+		width:$main-width;
+		height: auto!important;
+		margin:0 auto;
+		.social{
+			a{
+				display: inline-block;
+				margin-left: em(20px);
+				clear: both;
+				text-align: center;
+				i{font-size: em(50px)}
+				i:after{}
+				span{text-align: center;display:block;}
+			}
+		}
+		.float_right{
+			div{display:inline-block;float:left}
+			.weixin{
+				img{width:160px;height:auto}
+				span{text-indent: -999em;display:none;}
+			}
+			.about{
+				ul{display:inline-block;}
+			}
+		}
+
 	}
 }
 

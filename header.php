@@ -12,6 +12,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" /> <!--fuckbaidu-->
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/css.css" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fontello/css/fontello.css">
 
 <!--[if lte IE 8]>
 	<link rel="stylesheet" href="http://www.anzhuo.cn/Public/default/css/productIE.css">
