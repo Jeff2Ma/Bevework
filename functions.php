@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /*__________________________________________定义全局变量________________________________________*/
 require('includes/update-notifier.php');
 
-
+include_once(TEMPLATEPATH . '/includes/theme-options.php');
 /*__________________________________________基本WordPress theme架构代码________________________________________*/
 
 /**
@@ -324,6 +324,7 @@ $args = array(
 'number' => '30',  
 ); 
 return $args; 
-} 
+}
+
 
  ?>

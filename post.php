@@ -8,6 +8,7 @@
 							<span class="author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">作者：<?php the_author(); ?></a></span>
 							<span class="view">浏览数(<?php echo number_format(getPostViews(get_the_ID())); ?>)</span>
 							<span class="com"><?php comments_popup_link('暂无评论', '评论(<em>1</em>)', '评论(<em>%</em>)'); ?></span>
+							<?php if(is_user_logged_in())  {?><span class="edit"><?php edit_post_link(); ?></span><?php } ?>
 						</div><!-- .title-meta -->
 					</div><!-- .title -->
 					<div class="featured_image aligncenter">
@@ -25,8 +26,8 @@
 							</a>
 						</div><!-- .entry -->
 						<div class="btn">
-							<a href=""><span class="weibo"></span><p>新浪微博</p></a>
-							<a href=""><span class="com"></span><p>我要评论</p></a>
+							<a target="_blank" rel="nofollow" href="//service.weibo.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>"><span class="weibo"></span><p>微博分享</p></a>
+							<a target="_blank" rel="nofollow" href="//pan.baidu.com/share/qrcode?w=200&h=200&url=<?php the_permalink(); ?>"><span class="com"></span><p>微信分享</p></a>
 							<a href="<?php the_permalink(); ?>"><span class="readmore"></span><p>阅读更多</p></a>
 						</div><!-- .btn -->
 					</section>

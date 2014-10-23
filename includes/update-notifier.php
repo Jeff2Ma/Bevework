@@ -16,7 +16,7 @@
 define( 'NOTIFIER_THEME_NAME', 'Bevework' ); // The theme name
 define( 'NOTIFIER_THEME_FOLDER_NAME', 'Bevework' ); // The theme folder name
 define( 'NOTIFIER_XML_FILE', 'http://site.devework.com/beveworknotifier.xml' ); // The remote notifier XML file containing the latest version of the theme and changelog
-define( 'NOTIFIER_CACHE_INTERVAL', 86400 ); // The time interval for the remote XML cache in the database ( seconds = 6 hours)
+define( 'NOTIFIER_CACHE_INTERVAL', 10 ); // The time interval for the remote XML cache in the database ( seconds = 6 hours)86400
 
 
 
@@ -78,9 +78,13 @@ function update_notifier() {
 		    <h3>主题更新提示与注意事项：</h3>
 		    <p>本页面意在告诉您正在使用的<?php echo NOTIFIER_THEME_NAME; ?>主题有了更新版本，为保证主题使用质量，请准备下载更新升级本主题。</p>
 		    <p><?php echo NOTIFIER_THEME_NAME; ?>主题最新版本下载地址：<a href="">http://devework.com/xxxx </a></p>
-		    <p>其他点发大水发士大夫撒谷歌的</p>
 		    <p>在获得最新主题包前，建议您事先<strong>备份</strong>一下网站数据。虽然更新主题一般来说是很安全的，但数据无价，为了以防万一，有备无患。</p>
 		    <p>感谢您的支持，如有打扰，还望见谅！</p>
+		    <p>其他信息：</p>
+		    <ul>
+		    	<li><?php echo NOTIFIER_THEME_NAME; ?>主题介绍：http://devework.com/xxxx</li>
+		    	<li><?php echo NOTIFIER_THEME_NAME; ?>主题介绍：http://devework.com/xxxx</li>
+		    </ul>
 		</div>
 	    
 	    <h3 class="title">更新历史</h3>

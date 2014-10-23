@@ -1,0 +1,81 @@
+#background_pattern_custom-image img{
+	max-width: 120px!important;
+}
+#bl_font_preview{
+    background: none repeat scroll 0 0 infobackground;
+    border: medium none;
+    box-shadow: none !important;
+    font-size: 24px;
+    margin: 15px 0;
+    height: 60px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    font-family: 'Crete Round',serif;
+}
+#bl_font_select_box {
+  font-size: 18px;
+  height: auto;
+  padding: 4px;
+  width: 100%;
+}
+#bl_font_variants, #bl_font_subsets{
+    float: left;
+    margin-top: 15px;
+    padding-right: 40px;
+}
+#bl_font_variants div, #bl_font_subsets div{
+	font-size: 15px;
+}
+#bl_font_variants .bl_300{
+    font-weight: 300;
+}
+#bl_font_variants .bl_300italic{
+    font-weight: 300;
+    font-style: italic;
+}
+#bl_font_variants .bl_400{
+    font-weight: 400;
+}
+#bl_font_variants .bl_400italic{
+    font-weight: 400;
+    font-style: italic;
+}
+#bl_font_variants .bl_600{
+    font-weight: 600;
+}
+#bl_font_variants .bl_600italic{
+    font-weight: 600;
+    font-style: italic;
+}
+#bl_font_variants .bl_700{
+    font-weight: 700;
+}
+#bl_font_variants .bl_700italic{
+    font-weight: 700;
+    font-style: italic;
+}
+#bl_font_variants .bl_800{
+    font-weight: 800;
+}
+#bl_font_variants .bl_800italic{
+    font-weight: 800;
+    font-style: italic;
+}
+#bl_font_variants input, #bl_font_subsets input{
+	margin-bottom: 10px;
+}
+.bl_font_container{
+	padding: 15px;
+}
+#bl_font_confirm{
+	bottom: 30px;
+	clear: left;
+	position: absolute;
+	right: 30px;
+}
+.unstyled{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

@@ -19,6 +19,7 @@
 									<span class="view">浏览数(<?php echo number_format(getPostViews(get_the_ID())); ?>)</span>
 									<span class="cat">分类：<?php the_category(', '); ?></span>
 									<span class="com"><?php comments_popup_link('暂无评论', '评论(<em>1</em>)', '评论(<em>%</em>)'); ?></span>
+									<?php if(is_user_logged_in())  {?><span class="edit"><?php edit_post_link(); ?></span><?php } ?>
 								</div> <!-- .stat -->
 							</div> <!-- .info -->
 						</div><!-- single.meta -->

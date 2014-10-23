@@ -1,16 +1,20 @@
+<?php
+$minilogo = beve_option('dw_minilogo', '' );
+$logo = beve_option('dw_logo', '' );
+?>
 <!DOCTYPE html>
-<!--[if lte IE 6]><html class="lteIE_6 lteIE_7 lteIE_8"><![endif]-->
-<!--[if lte IE 7]><html class="lteIE_7 lteIE_8"><![endif]-->
-<!--[if lte IE 8]><html class="lteIE_8"><![endif]-->
-<!--[if gte IE 9]><!-->
-<html>
-<!--<![endif]-->
+<html lang="zh-CN">
 <head>
-	<title><?php dw_meta_title(); ?></title>
-	<meta charset="UTF-8">
-	<meta name="renderer" content="webkit">
-<meta http-equiv="Cache-Control" content="no-siteapp" /> <!--fuckbaidu-->
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /> <!--fuckbaidu -->
+ <?php if ( empty( $minilogo ) ) { ?>
+    <link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon" />
+    <?php  } else{  ?>
+    <link rel="shortcut icon" href="<?php echo $minilogo; ?>" type="image/x-icon" />
+    <?php } ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/css.css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fontello/css/fontello.css">
 
@@ -28,7 +32,7 @@
 	<div id="top">
     	<header class="clearfix">
     		<div class="float_left logo">
-    			<a href="/" alt="<?php bloginfo('name'); ?>"><img class="logo" src="<?php bloginfo('template_url'); ?>/images/logo.png"></a>
+    			<a href="/" alt="<?php bloginfo('name'); ?>"><img class="logo" src="<?php echo $logo; ?>"></a>
     		</div>
     		<div class="float_right header-right">
     			<form method="get" action="<?php echo home_url( '/' ); ?>">
