@@ -13,7 +13,7 @@
 						<div class="single-meta">
 							<div class="info clearfix">
             					<a class="author" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 40 ); ?></a>
-								<a class="name" href="">发布者：<?php the_author(); ?></a>
+								<a class="name" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">发布者：<?php the_author(); ?></a>
 								<div class="stat">
 									<span class="date"><?php the_time('Y/m/j'); ?></span>
 									<span class="view">浏览数(<?php echo number_format(getPostViews(get_the_ID())); ?>)</span>

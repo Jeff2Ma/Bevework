@@ -27,14 +27,16 @@
 <body <?php body_class('index'); ?>>
 	<div id="top">
     	<header class="clearfix">
-    		<div class="float_left logo"><img class="logo" src="<?php bloginfo('template_url'); ?>/images/logo.png"></div>
+    		<div class="float_left logo">
+    			<a href="/" alt="<?php bloginfo('name'); ?>"><img class="logo" src="<?php bloginfo('template_url'); ?>/images/logo.png"></a>
+    		</div>
     		<div class="float_right header-right">
-    			<form method="get" action="/search/index" _lpchecked="1">
-					<input type="text" name="keyword" value="">
+    			<form method="get" action="<?php echo home_url( '/' ); ?>">
+					<input type="text" name="s" value="">
 					<input type="submit" value="">
 				</form>
-    			<span class=""><a class="reg">注册</a></span>
-    			<span class=""><a class="log">注册</a></span>
+    			<span class="reg"><?php wp_register(); ?></span>
+    			<span class="log"><?php wp_loginout(); ?></span>
     		</div>
     	</header>
 
@@ -42,6 +44,7 @@
 		<?php wp_nav_menu( 
     		array( 
     		'theme_location' => 'menu-primary',
+    		'depth'           => 1,
     		'container_class' => 'rsp_body', 
     		'menu_class' => 'menu clearfix' 
     		//'menu_id' => 'menu-primary-items', 

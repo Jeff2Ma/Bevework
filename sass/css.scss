@@ -101,7 +101,18 @@ body{
 				}
 		}
 		span{
-			display:inline;
+			display:inline;	
+			li{list-style:none;}			
+			&.reg a,&.log a{border: 1px solid #606060;
+					padding: 8px 20px;
+					font-weight: normal;border:none;
+				}
+			&.log a{
+					background: #10678b;
+					color: #9fc2d1;
+					
+					&:hover{background: #19769d}
+				}
 			a{float: left;
 			  display: inline-block;
 			  font-size: 14px;
@@ -109,15 +120,7 @@ body{
 			  color: #bcbcbc;
 			  background: #575757;
 			  border: 1px solid #353535;
-			  margin-left: 10px;
-				&.reg,&.log{border: 1px solid #606060;
-					padding: 10px 20px;
-					font-weight: normal;
-				}
-				&.log{
-					background: #10678b;
-					color: #9fc2d1;
-				}
+			  margin-left: 10px;				
 			}
 		}
 	}
