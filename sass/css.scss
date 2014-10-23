@@ -408,32 +408,45 @@ footer{
 	border-top: 1px solid #0a0a0a;
 	@include box-shadow(0 1px 2px #121212);
 
-	p{text-align:center;
+	.footercpright{
+		text-align:center;
+		margin-bottom: em(40px);
 		a,a:visited{color:#8c8c8c}
 	}
 	.f-content{
 		width:$main-width;
-		height: auto!important;
+		height:200px;
 		margin:0 auto;
+		clear: both;
 		.social{
 			a{
 				display: inline-block;
-				margin-left: em(20px);
+				margin-left: em(14px);
 				clear: both;
 				text-align: center;
-				i{font-size: em(50px)}
+				i{font-size: em(50px);}
 				i:after{}
+				
+
+				
 				span{text-align: center;display:block;}
 			}
+		
 		}
+		.subtitle{margin-top: em(40px);font-size: 1.2em}
 		.float_right{
-			div{display:inline-block;float:left}
+			div{display:inline-block;float:left;margin-left: em(30px)}
 			.weixin{
 				img{width:160px;height:auto}
 				span{text-indent: -999em;display:none;}
 			}
 			.about{
-				ul{display:inline-block;}
+				ul{display:inline-block;margin:0;}
+				li{
+					line-height: 2em;
+					&:first-child{list-style:none;font-size: em(20px);margin-left: -1em}
+					a{color:#8c8c8c}
+				}
 			}
 		}
 
