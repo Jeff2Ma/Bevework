@@ -6,13 +6,45 @@ function dw_store_list_page(){
 }
 add_action('admin_menu','dw_store_list_page');
 
-function dwstore_list_xml(){
- //create new document object
- $dom_object = new DOMDocument();
- //load xml file
- $dom_object->load("http://site.devework.com/store.xml");
+define( 'store_list_cache_time', 1728000); //20 day
 
- $item = $dom_object->getElementsByTagName("item");
+function get_dw_store_list($interval) {
+	$store_list_file_url = 'http://localhost/wp-content/themes/Bevework/store.xml';
+	$db_list_cache_field = 'store_list_cache';
+	$db_list_cache_field_last_updated = 'store_list_cache_last_updated';
+	$last = get_option( $db_list_cache_field_last_updated );
+	$now = time();
+	if ( !$last || (( $now - $last ) > $interval) ) {
+		if( function_exists('curl_init') ) {
+			$ch = curl_init($store_list_file_url);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+			$cache = curl_exec($ch);
+			curl_close($ch);
+		} else {
+			$cache = file_get_contents($store_list_file_url); 
+		}
+		
+		if ($cache) {			
+			update_option( $db_list_cache_field, $cache );
+			update_option( $db_list_cache_field_last_updated, time() );
+		} 
+		$store_list_data = get_option( $db_list_cache_field );
+	}
+	else {
+		$store_list_data = get_option( $db_list_cache_field );
+	}
+	
+	if( strpos((string)$store_list_data, '<product-list>') === false ) {
+		$store_list_data = '<?xml version="1.0" encoding="utf-8"?><product-list><item><name>轻博客主题：Mindia</name><pic>http://storecdn.devework.com/wp-content/uploads/2014/09/mindia.png</pic><price>129</price><link>http://devework.com/theme/mindia/</link><buy>http://store.devework.com/product/mindia</buy><intro>一款Medium 风格的WordPress 主题，类似于轻博客，自媒体博客。主题提倡“以文为本，图片为辅”的写作方式。如果你需要一款主题能让你专注于写作，那么Mindia 主题就是你的不二之选！</intro></item><item><name>移动主题：EaseMobile</name><pic>http://storecdn.devework.com/wp-content/uploads/2014/09/easemobile-326x300.png</pic><price>99</price><link>http://devework.com/theme/easemobile/</link><buy>http://store.devework.com/product/easemobile</buy><intro>一款WordPress 移动（手机）主题，基于Html5+CSS3开发，采用类Android Design +扁平化风格，配以Off Canvas 侧边栏导航，自带主题后台选项，另有相关文章、广告管理，社会化分享、WebApp等实用功能；更考虑了当前国内移动互联网发展情况，将主题性能高度优化。</intro></item><item><name>移动主题：DeveMobile</name><pic>http://storecdn.devework.com/wp-content/uploads/2014/09/devemobile-326x300.png</pic><price>109</price><link>http://devework.com/theme/devemobile/</link><buy>http://store.devework.com/product/devemobile</buy><intro>一款WordPress 移动（手机）主题，基于Html5+CSS3开发，采用类Android Design +扁平化风格，配以Off Canvas 侧边栏导航，自带主题后台选项，另有相关文章、广告管理，社会化分享、WebApp等实用功能；更考虑了当前国内移动互联网发展情况，将主题性能高度优化。</intro></item><item><name>博客主题：Devework</name><pic>http://storecdn.devework.com/wp-content/uploads/2014/09/devework.png</pic><price>99</price><link>http://devework.com/theme/devework/</link><buy>http://store.devework.com/product/devework</buy><intro>基于Html5+CSS3开发，兼容IE7+ 及其他主流浏览器，主题无缝、深度集成移动版本（手机版），拥有强大的后台主题设置页面，提供7+ 小工具以及页面模板，集成SEO、Ajax 评论、公告栏、短代码、社会化分享、相关文章、广告等20多项实用功能。一款用心打造的主题！</intro></item></product-list>';
+	}
+	$xml = simplexml_load_string($store_list_data); 
+	return $xml;
+}
+
+function dwstore_list_xml(){
+ 	$xml = get_dw_store_list(store_list_cache_time);
  ?>
  
  <div class="wrap">
@@ -30,32 +62,14 @@ function dwstore_list_xml(){
 			<tbody>
 
 
- <?php foreach( $item as $value ){
- $names = $value->getElementsByTagName("name");
- $name  = $names->item(0)->nodeValue;
-
- $pics = $value->getElementsByTagName("pic");
- $pic  = $pics->item(0)->nodeValue;
-
- $prices = $value->getElementsByTagName("price");
- $price  = $prices->item(0)->nodeValue;
-
- $links = $value->getElementsByTagName("link");
- $link  = $links->item(0)->nodeValue;
-
- $buys = $value->getElementsByTagName("buy");
- $buy  = $buys->item(0)->nodeValue;
-
- $intros = $value->getElementsByTagName("intro");
- $intro  = $intros->item(0)->nodeValue;
- ?>
+ <?php foreach( $xml->item as $item ){ ?>
 			<tr>
-					<td><img src="<?php echo $pic; ?>?imageView/1/w/150/h/150" width="50" /></td>
-					<td style="width:100px;"><a href="<?php echo $link; ?>"><?php echo $name; ?></a></td>
-					<td><?php echo $intro; ?></td>
-					<td><a href="<?php echo $link; ?>">查看详细</a></td>
-					<td>￥<?php echo $price; ?></td>
-					<td><a href="<?php echo $buy; ?>">立即购买</a></td>
+					<td><img src="<?php echo $item->pic; ?>?imageView/1/w/150/h/150" width="50" /></td>
+					<td style="width:100px;"><a href="<?php echo $item->link; ?>"><?php echo $item->name; ?></a></td>
+					<td><?php echo $item->intro; ?></td>
+					<td><a href="<?php echo $item->link; ?>">查看详细</a></td>
+					<td>￥<?php echo $item->price; ?></td>
+					<td><a href="<?php echo $item->buy; ?>">立即购买</a></td>
 				</th>
 			<tr>
 <?php } ?>

@@ -16,7 +16,7 @@
 define( 'NOTIFIER_THEME_NAME', 'Bevework' ); // The theme name
 define( 'NOTIFIER_THEME_FOLDER_NAME', 'Bevework' ); // The theme folder name
 define( 'NOTIFIER_XML_FILE', 'http://site.devework.com/beveworknotifier.xml' ); // The remote notifier XML file containing the latest version of the theme and changelog
-define( 'NOTIFIER_CACHE_INTERVAL', 10 ); // The time interval for the remote XML cache in the database ( seconds = 6 hours)86400
+define( 'NOTIFIER_CACHE_INTERVAL', 86400 ); // The time interval for the remote XML cache in the database ( seconds = 6 hours)86400
 
 
 
