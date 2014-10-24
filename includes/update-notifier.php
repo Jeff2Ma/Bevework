@@ -27,7 +27,7 @@ function update_notifier_menu() {
 		$theme_data = get_theme_data(TEMPLATEPATH . '/style.css'); // Read theme current version from the style.css
 		
 		if( (float)$xml->latest > (float)$theme_data['Version']) { // Compare current theme version with the remote XML version
-			add_dashboard_page( NOTIFIER_THEME_NAME . ' Theme Updates', NOTIFIER_THEME_NAME . ' <span class="update-plugins count-1"><span class="update-count">主题更新</span></span>', 'administrator', 'theme-update-notifier', 'update_notifier');
+			add_dashboard_page( NOTIFIER_THEME_NAME . '主题更新提示', NOTIFIER_THEME_NAME . ' <span class="update-plugins count-1"><span class="update-count">主题更新</span></span>', 'administrator', 'theme-update-notifier', 'update_notifier');
 		}
 	}	
 }

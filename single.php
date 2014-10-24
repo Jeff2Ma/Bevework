@@ -30,9 +30,13 @@
 
 			
 					<section class="entry clearfix">
+						
+						<?php if (beve_option('dw_singlefigur')){ ?>
 						<div class="aligncenter">
 							<img src="<?php bloginfo('template_url'); ?>/images/sam.jpg">
 						</div><!-- . -->
+						<?php } ?>
+						
 						  <?php the_content('');?>
 
 						  <?php baidu_share(); ?>

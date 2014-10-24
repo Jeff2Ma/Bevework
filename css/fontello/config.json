@@ -31,12 +31,6 @@
       "src": "fontawesome"
     },
     {
-      "uid": "b945f4ac2439565661e8e4878e35d379",
-      "css": "gplus",
-      "code": 59398,
-      "src": "entypo"
-    },
-    {
       "uid": "935e2e437efbb3a69ed9a83e2d2f637e",
       "css": "qq",
       "code": 59393,
@@ -47,6 +41,18 @@
       "css": "renren",
       "code": 59395,
       "src": "entypo"
+    },
+    {
+      "uid": "2a3192d0f8fe0c7cf959168e68eb16d8",
+      "css": "rss",
+      "code": 59399,
+      "src": "zocial"
+    },
+    {
+      "uid": "8045477f6a7ef0bd7caff130ad25b88d",
+      "css": "facebook",
+      "code": 59400,
+      "src": "brandico"
     }
   ]
 }

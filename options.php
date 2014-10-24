@@ -53,7 +53,7 @@ function optionsframework_options() {
 			<li>如果你是在第三方下载本主题，为了安全请前往官方网站重新下载安装；</li>
 			<li>Bevework 主题一旦有更新您将会收到通知，到时候按照说明操作即可；</li>
 			<li>Bevework 主题采用GPL 协议，不得用于任何形式的商业行为；</li>
-			<li>因为是免费主题，为了保护作者收费主题客户的利益，本主题功能有所保留；如果有需要，欢迎购买作者的收费主题！体验更加强大功能的WordPress 中文主题！</li>
+			<li>因为是免费主题，为了保护作者收费主题客户的利益，本主题功能绝对有所保留；如果有需要，欢迎购买作者的收费主题！体验更加强大功能的WordPress 中文主题！</li>
 			</ol>
 			', 'options_framework_theme'),
 		'type' => 'info');
@@ -115,8 +115,8 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('页脚友情链接', 'options_framework_theme'),
-		'desc' => __('开启页脚友情链接模块？（默认开启），设置友情链接请通过“仪表盘-链接”设置', 'options_framework_theme'),
+		'name' => __('首页页脚友情链接', 'options_framework_theme'),
+		'desc' => __('开启首页页脚友情链接模块？（默认开启），设置友情链接请通过“仪表盘-链接”设置', 'options_framework_theme'),
 		'id' => 'dw_openlink',
 		'std' => '1',
 		'type' => 'checkbox');
@@ -133,7 +133,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 $options[] = array(
-		'desc' => '<div id="message2" class="updated below-h2"><p>以下列出常用的社交网络，会显示在页脚处，需要你填入你的账号链接相关，建议勾选3个为佳。</p></div>',
+		'desc' => '<div id="message2" class="updated below-h2"><p>以下列出常用的社交网络，会显示在页脚处，需要你填入你的账号链接相关，建议勾选4个为佳。</p></div>',
 		'type' => 'info');
 
 
@@ -162,11 +162,18 @@ $options[] = array(
 		'class' => 'hide',
 		'std'=>get_bloginfo('template_url').'/images/wechatimg.png',
 		'type' => 'upload');
+
 	$options[] = array(
-		'desc' => __('自定义提示文字', 'options_framework_theme'),
-		'id' => 'md_wechat_tip',
+		'name' => __('QQ', 'options_framework_theme'),
+		'desc' => __('启用', 'options_framework_theme'),
+		'id' => 'md_qq',
+		'std' => '0',
+		'type' => 'checkbox');
+	$options[] = array(
+		'desc' => __('填入QQ个人消息代码', 'options_framework_theme'),
+		'id' => 'md_qq_url',
 		'class' => 'hide',
-		'std' => '在微信里搜索“jeff2ma”或在手机上扫描本二维码添加我的微信帐号',
+		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
@@ -183,14 +190,14 @@ $options[] = array(
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('豆瓣', 'options_framework_theme'),
+		'name' => __('人人', 'options_framework_theme'),
 		'desc' => __('启用', 'options_framework_theme'),
-		'id' => 'md_douban',
-		'std' => '1',
+		'id' => 'md_renren',
+		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
-		'desc' => __('填入豆瓣网个人链接', 'options_framework_theme'),
-		'id' => 'md_douban_url',
+		'desc' => __('填入人人网个人链接', 'options_framework_theme'),
+		'id' => 'md_renren_url',
 		'class' => 'hide',
 		'std' => '',
 		'type' => 'text');
@@ -200,7 +207,7 @@ $options[] = array(
 		'name' => __('Twitter', 'options_framework_theme'),
 		'desc' => __('启用', 'options_framework_theme'),
 		'id' => 'md_tt',
-		'std' => '0',
+		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
 		'desc' => __('填入推特个人链接', 'options_framework_theme'),
@@ -239,6 +246,21 @@ $options[] = array(
 	$options[] = array(
 		'name' => __('高级设置', 'options_framework_theme'),
 		'type' => 'heading');
+
+
+	$options[] = array(
+		'name' => __('自定义CSS 代码', 'options_framework_theme'),
+		'desc' => __('自定义CSS 代码，必须包括CSS 的开闭标签', 'options_framework_theme'),
+		'id' => 'dw_customcss',
+		'std' => '',
+		'type' => 'textarea');
+
+	$options[] = array(
+		'name' => __('自定义js 代码', 'options_framework_theme'),
+		'desc' => __('自定义js 代码，必须包括script的开闭标签', 'options_framework_theme'),
+		'id' => 'dw_customjs',
+		'std' => '',
+		'type' => 'textarea');
 
 	$options[] = array(
 		'name' => __('自定义页脚右侧内容1', 'options_framework_theme'),

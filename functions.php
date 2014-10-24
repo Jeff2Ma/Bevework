@@ -326,5 +326,31 @@ $args = array(
 return $args; 
 }
 
+/**
+ * 页脚主题版权声明
+ *
+ * @version 1.0.0
+ * @author Jeff ~ DeveWork.com
+ * @internal 尊重作者的劳动，请不要删除或篡改版权声明代码！
+ *
+ */
+function dw_footer(){?>
+  <?php //尊重作者的劳动，请不要删除或篡改版权声明代码！  ?>
+  <p class="clearfix footercpright">&copy; <?php echo date("Y")?>  <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>.  Powered by <a target="_blank" rel="nofollow" href="//cn.wordpress.org">WordPress</a>. Designed from <a  target="_blank" rel="nofollow" href="//anzhuo.cn/" title="安卓网">anzhuo</a>. Theme by <a target="_blank" rel="nofollow" href="//devework.com/" title="DeveWork.com荣誉出品">Bevework</a>.</p>
+</footer>
+<?php wp_footer();
+}
+
+//主题设置加载
+function dw_head_code(){
+  echo beve_option('dw_customcss');
+}
+add_filter("wp_head", "dw_head_code");
+
+function dw_footer_code(){
+  echo beve_option('dw_customjs');
+  echo beve_option('dw_tongji');
+}
+add_filter("wp_footer", "dw_footer_code");
 
  ?>

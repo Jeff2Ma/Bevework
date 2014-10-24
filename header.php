@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 $minilogo = beve_option('dw_minilogo', '' );
 $logo = beve_option('dw_logo', '' );
 ?>
