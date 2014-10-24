@@ -11,24 +11,13 @@ $logo = beve_option('dw_logo', '' );
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" /> <!--fuckbaidu -->
- <?php if ( empty( $minilogo ) ) { ?>
+    <?php if ( empty( $minilogo ) ) { ?>
     <link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon" />
     <?php  } else{  ?>
     <link rel="shortcut icon" href="<?php echo $minilogo; ?>" type="image/x-icon" />
     <?php } ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fontello/css/fontello.css">
-
-<!--[if lte IE 8]>
-	<link rel="stylesheet" href="http://www.anzhuo.cn/Public/default/css/productIE.css">
-<![endif]-->
-<!--[if lte IE 8]>
-	<script src="http://www.anzhuo.cn/Public/default/js/ie/html5shiv.js"></script>
-	<link href="http://www.anzhuo.cn/Public/default/css/styleIE.css" type="text/css" rel="stylesheet"/>
-<![endif]-->
-</head>
-<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
 <?php wp_head(); ?>
+</head>
 <body <?php body_class('index'); ?>>
 	<div id="top">
     	<header class="clearfix">

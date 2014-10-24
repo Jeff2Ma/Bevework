@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * A unique identifier is defined to store the options in the database and reference them from the theme.
  * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
@@ -46,7 +47,7 @@ function optionsframework_options() {
 	$options[] = array(
 		//'name' => __('主题相关', 'options_framework_theme'),
 		'desc' => __('
-			<p><a href="">Bevework 主题介绍</a>  <a href="">最新版下载地址</a> <a href="">作者主页</a></p>
+			<p><a href="">Bevework 主题介绍</a>  &nbsp;&nbsp;<a href="//store.devework.com/product/bevework">最新版下载地址</a> &nbsp;&nbsp;<a href="//devework.com">DeveWork.com</a></p>
 			<span>声明：</span>
 			<ol>
 			<li>Bevework 主题是免费主题，但<strong style="color:red;">不提供</strong>免费技术支持；如果你喜欢，可以加入Bevework 主题用户群，互帮互助；</li>
@@ -62,7 +63,8 @@ function optionsframework_options() {
 		//'name' => __('推广', 'options_framework_theme'),
 		'desc' => __('
 			<strong style="color:red;">优秀收费主题推广：</strong>
-			<p>以下是作者开发的几款收费主题，如果你喜欢，欢迎购买支持作者！（收费主题均提供免费技术支持）</p>
+			<p>DW商城正在销售作者开发的几款收费主题，如果你喜欢，欢迎购买支持作者！（收费主题均提供免费技术支持）</p>
+			<p><a href="/wp-admin/admin.php?page=dw_store_list_page">点击查看</a></p>
 
 			'),
 		'type' => 'info');
@@ -287,16 +289,6 @@ $options[] = array(
 					<li><a href="//portal.qiniu.com/signup?code=3lpd8y6fsplqp">七牛云存储</a></li>
 				</ul>',
 		'type' => 'textarea');
-	
-	
-
-	$options[] = array(
-		'name' => __('更多主题', 'options_framework_theme'),
-		'type' => 'heading');
-
-	// $options[] = array(
-	// 	'name' => __('高级功能', 'options_framework_theme'),
-	// 	'type' => 'heading');
 
 	return $options;
 }

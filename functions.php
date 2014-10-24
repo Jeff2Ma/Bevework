@@ -10,10 +10,32 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 
 /*__________________________________________定义全局变量________________________________________*/
-require('includes/update-notifier.php');
 
+define('THEMEVER', wp_get_theme()->get( 'Version' )); 
+define("DWPATH", get_bloginfo('template_directory'));
+
+
+/*_____________________________________ 加载脚本文件 ______________________________________*/
+
+add_action('wp_enqueue_scripts', 'beve_script');
+function beve_script() {
+    wp_enqueue_style('style',DWPATH . '/style.css',array(),THEMEVER,'screen');
+    wp_enqueue_style('fontello',DWPATH . '/css/fontello/css/fontello.css',array(),THEMEVER,'screen');
+    wp_enqueue_script( 'jquery1.7.2', 'http://libs.baidu.com/jquery/1.7.2/jquery.min.js', array(), '1.7.2', false);
+    if ( is_singular() || is_page()){
+      wp_enqueue_script( 'commentajax', DWPATH . '/comments-ajax.js', array(), THEMEVER, true);
+    }
+}
+
+
+/*_____________________________________ 加载必要文件 ______________________________________*/
+
+require('includes/update-notifier.php');
 include_once(TEMPLATEPATH . '/includes/theme-options.php');
 include_once(TEMPLATEPATH . '/includes/store-list.php');
+
+
+
 /*__________________________________________基本WordPress theme架构代码________________________________________*/
 
 /**
@@ -342,16 +364,33 @@ function dw_footer(){?>
 <?php wp_footer();
 }
 
-//主题设置加载
+/**
+ * 主题设置- 及页头页尾相关代码
+ *
+ * @version 1.0.0
+ * @author Jeff ~ DeveWork.com
+ *
+ */
+//页眉
 function dw_head_code(){
   echo beve_option('dw_customcss');
 }
-add_filter("wp_head", "dw_head_code");
+add_filter("wp_head", "dw_head_code",100);
 
+//页脚
 function dw_footer_code(){
   echo beve_option('dw_customjs');
   echo beve_option('dw_tongji');
 }
-add_filter("wp_footer", "dw_footer_code");
+add_filter("wp_footer", "dw_footer_code",100);
+
+//html5js
+add_action('wp_head','html5_shiv');
+function html5_shiv() {
+     echo '<!--[if lt IE 9]><script type="text/javascript" src="';
+     echo bloginfo('template_url');
+     echo '/js/html5.js"></script><![endif]-->'. "\n";
+}
+
 
  ?>

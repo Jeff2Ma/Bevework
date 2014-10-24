@@ -1,8 +1,8 @@
 <?php
-
+//后台加载相关菜单项
 function dw_store_list_page(){
-	add_theme_page("DW商城","DW商城",'edit_themes','dw_store_list_page','dwstore_list_xml'); 
-	//add_theme_page("test","test",'edit_themes','dw_store_list_page','dwtest');
+  add_menu_page("DW商城","DW商城",'manage_options','dw_store_list_page','dwstore_list_xml','dashicons-cart'); 
+  //add_theme_page("test","test",'edit_themes','dw_store_list_page','dwtest');
 }
 add_action('admin_menu','dw_store_list_page');
 
@@ -48,15 +48,17 @@ function dwstore_list_xml(){
  ?>
  
  <div class="wrap">
-		<h2>DW商城在售商品</h2>
+		<h2 class="dashicons-before dashicons-cart"> DW商城 - 商品展示</h2>
+		<p>DW商城是DeveWork.com 的Jeff 开通的一个用于销售个人开发的WordPress 商品（包括但不仅限于WordPress主题、WordPress插件）及其他数字商品，所有商品均为个人开发者创造的正版数字产品，提供一站式的自动化在线销售、支付、下载、授权系统，客户可轻松快捷获取所需商品。</p>
+		<p><a target="_blank" href="//store.devework.com/">进入商城浏览</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="//store.devework.com/guide">购买流程</a></p>
 		<table class="widefat" cellspacing="0">
 			<thead>
 				<tr>
 					<th style="width:164px;" colspan="2">商品</th>
-					<th>介绍</th>
+					<th>简介</th>
 					<th style="width:64px;">详细介绍</th>
-					<th style="width:32px;">价格</th>
-					<th style="width:64px;">购买</th>
+					<th style="width:64px;text-align:center;">价格</th>
+					<th style="width:64px;text-align:center;">购买</th>
 				</th>
 			</thead>
 			<tbody>
@@ -68,7 +70,7 @@ function dwstore_list_xml(){
 					<td style="width:100px;"><a href="<?php echo $item->link; ?>"><?php echo $item->name; ?></a></td>
 					<td><?php echo $item->intro; ?></td>
 					<td><a href="<?php echo $item->link; ?>">查看详细</a></td>
-					<td>￥<?php echo $item->price; ?></td>
+					<td style="text-align:center;"><?php echo $item->price; ?></td>
 					<td><a href="<?php echo $item->buy; ?>">立即购买</a></td>
 				</th>
 			<tr>
