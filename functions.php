@@ -365,6 +365,33 @@ function dw_footer(){?>
 }
 
 /**
+ * 主题支持特色图像及获取特色图像URL
+ *
+ * @version 1.0.0
+ * @author Jeff ~ DeveWork.com
+ *
+ */
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+}
+function beve_post_img_url() {
+  $img_id = get_post_thumbnail_id();
+  $img_url = wp_get_attachment_image_src($img_id);
+  
+  if (!empty($img_url)){//优先采用自定义外链图片
+    $img_url = $img_url[0];
+  }
+  else{//随机图片
+    $random = mt_rand(1, 6);
+    echo get_bloginfo('template_url');
+    echo '/images/pic/'.$random.'.jpg';
+  };
+  echo $img_url;
+}
+
+
+
+/**
  * 主题设置- 及页头页尾相关代码
  *
  * @version 1.0.0

@@ -50,7 +50,7 @@ function optionsframework_options() {
 			<p><a href="">Bevework 主题介绍</a>  &nbsp;&nbsp;<a href="//store.devework.com/product/bevework">最新版下载地址</a> &nbsp;&nbsp;<a href="//devework.com">DeveWork.com</a></p>
 			<span>声明：</span>
 			<ol>
-			<li>Bevework 主题是免费主题，但<strong style="color:red;">不提供</strong>免费技术支持；如果你喜欢，可以加入Bevework 主题用户群，互帮互助；</li>
+			<li>Bevework 主题是免费主题，但<strong style="color:red;">不提供</strong>免费技术支持；如果你喜欢，可以<a href="">加入Bevework 主题用户群</a>，互帮互助；</li>
 			<li>如果你是在第三方下载本主题，为了安全请前往官方网站重新下载安装；</li>
 			<li>Bevework 主题一旦有更新您将会收到通知，到时候按照说明操作即可；</li>
 			<li>Bevework 主题采用GPL 协议，不得用于任何形式的商业行为；</li>
@@ -111,9 +111,9 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('文章页特色图像', 'options_framework_theme'),
-		'desc' => __('是否在文章页中打开特色图像？（默认打开）', 'options_framework_theme'),
+		'desc' => __('是否在文章页中打开特色图像？（默认关闭）', 'options_framework_theme'),
 		'id' => 'dw_singlefigur',
-		'std' => '1',
+		'std' => '0',
 		'type' => 'checkbox');
 
 	$options[] = array(
@@ -289,6 +289,23 @@ $options[] = array(
 					<li><a href="//portal.qiniu.com/signup?code=3lpd8y6fsplqp">七牛云存储</a></li>
 				</ul>',
 		'type' => 'textarea');
+
+	$options[] = array(
+		'name' => __('其它说明', 'options_framework_theme'),
+		'type' => 'heading');
+
+	$options[] = array(
+		'desc' => __('1、首页主题特色图像设置说明
+			<p>首页主题特色图像默认为如果不为文章添加特色图像（建议图片大小685x280），将自动展示随机图片（随机图片位于主题目录的images-pic 下）。</p>
+			2、菜单设置说明
+			<p>导航菜单最佳设置为7个，且都为一级菜单为宜（主题仅支持一级菜单）。</p>
+			3、页脚版权链接说明
+			<p>尊重作者的劳动成果，请勿删除页脚版权链接，谢谢！</p>
+			4、二次开发说明
+			<p>如果要编辑php代码，建议更多是添加而非删除；CSS文件采用SASS编写，源文件在主题目录sass 文件夹下。</p>
+
+			'),
+		'type' => 'info');
 
 	return $options;
 }
