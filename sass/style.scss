@@ -1,4 +1,12 @@
 @charset "utf-8";//必须设置了这个才能编译有中文的注释
+/*!
+Theme Name: Bevework
+Theme URI: http://devework.com/
+Version: 1.0
+Author: Jeff
+Description: BeveWork主题，免费博客主题；
+*/
+
 
 //全局引入
 @import "normalize";
@@ -90,7 +98,7 @@ body{
   				
   			}
 			input[type="submit"] {
-  				background: url("../images/searchIco.png") 50% 50% no-repeat;
+  				background: url("images/searchIco.png") 50% 50% no-repeat;
   					border: none;
   					outline: none;
   					position: absolute;
@@ -213,7 +221,7 @@ $art-pladeholder:em(24px);
 .error404{
 	article{padding-top:em(30px);padding-bottom:$art-pladeholder;}
 	.error404img{	
-	background: url(../images/sorry.png) top center no-repeat;
+	background: url(images/sorry.png) top center no-repeat;
 	padding-top: 250px;
 	text-align: center;
 	p{font-size: em(30px)}
@@ -284,15 +292,15 @@ article{
 						padding: 0 9px;
 						color: #6d6d6d;
 						span{display:inline-block; width:50px; height:50px;padding-top: 3px;}
-						.weibo{background: url(../images/shareIco.png) center no-repeat;}
-						.com{background: url(../images/txShareIco.png) center no-repeat;}
+						.weibo{background: url(images/shareIco.png) center no-repeat;}
+						.com{background: url(images/txShareIco.png) center no-repeat;}
 
-						.readmore{background: url(../images/enterIco.png) center no-repeat;}
+						.readmore{background: url(images/enterIco.png) center no-repeat;}
 						&:hover{
 							p{color:$main-font-color;}
-							.weibo{background: url(../images/shareIcoAct.png) center no-repeat;}
-							.com{background: url(../images/txShareIcoAct.png) center no-repeat;}
-							.readmore{background: url(../images/enterIcoAct.png) center no-repeat;}
+							.weibo{background: url(images/shareIcoAct.png) center no-repeat;}
+							.com{background: url(images/txShareIcoAct.png) center no-repeat;}
+							.readmore{background: url(images/enterIcoAct.png) center no-repeat;}
 							}
 					}
 			}
@@ -360,7 +368,7 @@ aside{
 		ul{
 			padding-right: $aside-padding;
 			li{
-				background: url(../images/list_style.png) no-repeat 0px 8px;
+				background: url(images/list_style.png) no-repeat 0px 8px;
 				padding-left: 13px;
 				margin-left: 16px;
 				margin-bottom: 10px;

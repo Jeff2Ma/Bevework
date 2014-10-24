@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 require('includes/update-notifier.php');
 
 include_once(TEMPLATEPATH . '/includes/theme-options.php');
+include_once(TEMPLATEPATH . '/includes/store-list.php');
 /*__________________________________________基本WordPress theme架构代码________________________________________*/
 
 /**

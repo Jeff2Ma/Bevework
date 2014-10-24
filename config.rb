@@ -9,6 +9,14 @@ images_dir = "images"
 javascripts_dir = "js"
 require 'compass-normalize'
 output_style = :nested
+#output_style = :compressed
+require 'fileutils'
+on_stylesheet_saved do |file|
+  if File.exists?(file) && File.basename(file) == "style.css"
+    puts "Moving: #{file}"
+    FileUtils.mv(file, File.dirname(file) + "/../" + File.basename(file))
+  end
+end
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 

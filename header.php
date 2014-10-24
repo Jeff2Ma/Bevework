@@ -16,7 +16,7 @@ $logo = beve_option('dw_logo', '' );
     <?php  } else{  ?>
     <link rel="shortcut icon" href="<?php echo $minilogo; ?>" type="image/x-icon" />
     <?php } ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/css.css" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fontello/css/fontello.css">
 
 <!--[if lte IE 8]>
@@ -33,7 +33,7 @@ $logo = beve_option('dw_logo', '' );
 	<div id="top">
     	<header class="clearfix">
     		<div class="float_left logo">
-    			<a href="/" alt="<?php bloginfo('name'); ?>"><img class="logo" src="<?php echo $logo; ?>"></a>
+    			<a rel="nofollow" href="/" alt="<?php bloginfo('name'); ?>"><img class="logo" src="<?php echo $logo; ?>"></a>
     		</div>
     		<div class="float_right header-right">
     			<form method="get" action="<?php echo home_url( '/' ); ?>">
