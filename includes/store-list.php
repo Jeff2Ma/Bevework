@@ -2,14 +2,13 @@
 //后台加载相关菜单项
 function dw_store_list_page(){
   add_menu_page("DW商城","DW商城",'manage_options','dw_store_list_page','dwstore_list_xml','dashicons-cart'); 
-  //add_theme_page("test","test",'edit_themes','dw_store_list_page','dwtest');
 }
 add_action('admin_menu','dw_store_list_page');
 
-define( 'store_list_cache_time', 1728000); //20 day
+define( 'store_list_cache_time', 864000); //10 day
 
 function get_dw_store_list($interval) {
-	$store_list_file_url = 'http://localhost/wp-content/themes/Bevework/store.xml';
+	$store_list_file_url = 'http://storecdn.devework.com/xml/store.xml';
 	$db_list_cache_field = 'store_list_cache';
 	$db_list_cache_field_last_updated = 'store_list_cache_last_updated';
 	$last = get_option( $db_list_cache_field_last_updated );
