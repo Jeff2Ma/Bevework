@@ -46,9 +46,6 @@ $logo = beve_option('dw_logo', '' );
     	) ); ?>
 	</nav>
 
-
-
-
     </div> <!-- #header-top	 -->
 			<div class="slider"><!-- 幻灯片 -->
 				<?php //include(TEMPLATEPATH .'/includes/bw-slider.php');?>				

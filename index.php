@@ -20,7 +20,6 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
                 <?php endif;?>
 
 
-
                 <?php if (have_posts()) :while (have_posts()) : the_post();
                 	//加载首页模板
                 	get_template_part('post');

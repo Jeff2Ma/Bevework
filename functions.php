@@ -34,8 +34,6 @@ require('includes/update-notifier.php');
 include_once(TEMPLATEPATH . '/includes/theme-options.php');
 include_once(TEMPLATEPATH . '/includes/store-list.php');
 
-
-
 /*__________________________________________基本WordPress theme架构代码________________________________________*/
 
 /**
@@ -51,6 +49,8 @@ register_nav_menus(array(
 function beve_nav_fallback(){
   echo '<div class="rsp_body"><ul class="menu clearfix">'.'<li class="menu-item"><a href="/">首页</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li>' .'</ul></div>';
 }
+
+
 /**
  * 侧边栏
  * @version 1.0.0
@@ -342,6 +342,7 @@ $anti_spam = new anti_spam();
  *
  */
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+
 /**
  * 自定义标签云
  *
@@ -360,6 +361,7 @@ function style_tags($args) {
 return $args; 
 }
 
+
 /**
  * 页脚主题版权声明
  *
@@ -374,6 +376,7 @@ function dw_footer(){?>
 </footer>
 <?php wp_footer();
 }
+
 
 /**
  * 主题支持特色图像及获取特色图像URL
