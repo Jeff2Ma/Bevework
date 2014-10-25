@@ -47,10 +47,10 @@ function optionsframework_options() {
 	$options[] = array(
 		//'name' => __('主题相关', 'options_framework_theme'),
 		'desc' => __('
-			<p><a href="">Bevework 主题介绍</a>  &nbsp;&nbsp;<a href="//store.devework.com/product/bevework">最新版下载地址</a> &nbsp;&nbsp;<a href="//devework.com">DeveWork.com</a></p>
+			<p><a href="http://devework.com/bevework.html">Bevework 主题介绍</a>  &nbsp;&nbsp;<a href="http://store.devework.com/product/bevework">最新版下载地址</a> &nbsp;&nbsp;<a href="//devework.com">DeveWork.com</a></p>
 			<span>声明：</span>
 			<ol>
-			<li>Bevework 主题是免费主题，但<strong style="color:red;">不提供</strong>免费技术支持；如果你喜欢，可以<a href="">加入Bevework 主题用户群</a>，互帮互助；</li>
+			<li>Bevework 主题是免费主题，但<strong style="color:red;">不提供</strong>免费技术支持；如果你喜欢，可以<a href="http://devework.com/bevework.html#qqqun">加入Bevework 主题用户群</a>，互帮互助；</li>
 			<li>如果你是在第三方下载本主题，为了安全请前往官方网站重新下载安装；</li>
 			<li>Bevework 主题一旦有更新您将会收到通知，到时候按照说明操作即可；</li>
 			<li>Bevework 主题采用GPL 协议，不得用于任何形式的商业行为；</li>

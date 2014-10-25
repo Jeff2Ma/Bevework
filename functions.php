@@ -39,7 +39,7 @@ include_once(TEMPLATEPATH . '/includes/store-list.php');
 /*__________________________________________基本WordPress theme架构代码________________________________________*/
 
 /**
- * 导航菜单
+ * 导航菜单及回调函数
  * @version 1.0.0
  * @author WordPress
  *
@@ -47,7 +47,10 @@ include_once(TEMPLATEPATH . '/includes/store-list.php');
 register_nav_menus(array(
       'menu-primary' => 'Bevework顶部导航菜单',
     ));
-
+//菜单回调函数
+function beve_nav_fallback(){
+  echo '<div class="rsp_body"><ul class="menu clearfix">'.'<li class="menu-item"><a href="/">首页</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li><li class="menu-item"><a href="/wp-admin/nav-menus.php">设置菜单</a></li>' .'</ul></div>';
+}
 /**
  * 侧边栏
  * @version 1.0.0
@@ -340,11 +343,11 @@ $anti_spam = new anti_spam();
  */
 add_filter('widget_tag_cloud_args','style_tags'); 
 function style_tags($args) { 
-$args = array( 
-'largest'=> '11', 
-'smallest'=> '11',
-'order'  => 'RAND',   
-'number' => '30',  
+  $args = array( 
+  'largest'=> '11', 
+  'smallest'=> '11',
+  'order'  => 'RAND',   
+  'number' => '30',  
 ); 
 return $args; 
 }
@@ -378,7 +381,7 @@ function beve_post_img_url() {
   $img_id = get_post_thumbnail_id();
   $img_url = wp_get_attachment_image_src($img_id);
   
-  if (!empty($img_url)){//优先采用自定义外链图片
+  if (!empty($img_url)){//特色图像链接
     $img_url = $img_url[0];
   }
   else{//随机图片

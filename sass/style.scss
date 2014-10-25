@@ -98,7 +98,8 @@ body{
   				
   			}
 			input[type="submit"] {
-  				background: url("images/searchIco.png") 50% 50% no-repeat;
+  				    background: url("images/searchIco.png") 50% 50% no-repeat;
+  				    background-color: transparent;
   					border: none;
   					outline: none;
   					position: absolute;
@@ -107,6 +108,7 @@ body{
   					right: 8px;
   					top: 10px;
 				}
+
 		}
 		span{
 			display:inline;	
@@ -291,16 +293,43 @@ article{
 						text-align: center;
 						padding: 0 9px;
 						color: #6d6d6d;
-						span{display:inline-block; width:50px; height:50px;padding-top: 3px;}
-						.weibo{background: url(images/shareIco.png) center no-repeat;}
-						.com{background: url(images/txShareIco.png) center no-repeat;}
-
-						.readmore{background: url(images/enterIco.png) center no-repeat;}
+						span{width:52px!important;
+							height:50px;
+							@include border-radius(50%);
+							background-color: #d8d8d8;
+							display:inline-block;
+							padding-top: 3px;
+							text-align: center;
+							vertical-align:middle;
+							i{	margin:auto 0;
+								font-size: 38px;
+								// position:absolute;
+								text-align: center;
+								vertical-align:middle;
+								color: rgba(255,255,255,.95);
+								font-weight: normal;
+								font-style: normal;
+								&.icon-weibo{}
+								&.icon-wechat{font-size: 34px;position:relative;left:-2px;top:2px}
+								&.icon-right{font-size: 34px;position:relative;top:2px;left:2px;}
+							}
+							&:hover{
+								background-color:#55bde8;
+							}
+						}
+						// .weibo{background: url(images/shareIco.png) center no-repeat;}
+						// .weibo{
+						// 	display:inline-block;
+							
+						// }
+						// // .com{background: url(images/txShareIco.png) center no-repeat;}
+						// .com{font-size: 34px}
+						// // .readmore{background: url(images/enterIco.png) center no-repeat;}
 						&:hover{
 							p{color:$main-font-color;}
-							.weibo{background: url(images/shareIcoAct.png) center no-repeat;}
-							.com{background: url(images/txShareIcoAct.png) center no-repeat;}
-							.readmore{background: url(images/enterIcoAct.png) center no-repeat;}
+							// .weibo{background: url(images/shareIcoAct.png) center no-repeat;}
+							// .com{background: url(images/txShareIcoAct.png) center no-repeat;}
+							// .readmore{background: url(images/enterIcoAct.png) center no-repeat;}
 							}
 					}
 			}

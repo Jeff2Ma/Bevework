@@ -24,10 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; get_header();?>
 
             
                     <section class="entry clearfix">
-                        <div class="aligncenter">
-                            <img src="<?php bloginfo('template_url'); ?>/images/sam.jpg">
-                        </div><!-- . -->
-                          <?php the_content('');?>
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); the_content(); endwhile;endif; ?>
 
                           <?php baidu_share(); ?>
 

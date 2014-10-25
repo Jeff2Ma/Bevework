@@ -40,9 +40,9 @@ $logo = beve_option('dw_logo', '' );
     		'theme_location' => 'menu-primary',
     		'depth'           => 1,
     		'container_class' => 'rsp_body', 
-    		'menu_class' => 'menu clearfix' 
+    		'menu_class' => 'menu clearfix',
     		//'menu_id' => 'menu-primary-items', 
-    		//'fallback_cb' => 'nav_fallback' 
+    		'fallback_cb' => 'beve_nav_fallback' 
     	) ); ?>
 	</nav>
 

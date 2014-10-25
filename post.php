@@ -26,9 +26,9 @@
 							</a>
 						</div><!-- .entry -->
 						<div class="btn">
-							<a target="_blank" rel="nofollow" href="//service.weibo.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>"><span class="weibo"></span><p>微博分享</p></a>
-							<a target="_blank" rel="nofollow" href="//pan.baidu.com/share/qrcode?w=200&h=200&url=<?php the_permalink(); ?>"><span class="com"></span><p>微信分享</p></a>
-							<a href="<?php the_permalink(); ?>"><span class="readmore"></span><p>阅读更多</p></a>
+							<a target="_blank" rel="nofollow" href="//service.weibo.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>"><span class="weibo"><i class="icon-weibo"></i></span><p>微博分享</p></a>
+							<a target="_blank" rel="nofollow" href="//pan.baidu.com/share/qrcode?w=200&h=200&url=<?php the_permalink(); ?>"><span class="com"><i class="icon-wechat"></i></span><p>微信分享</p></a>
+							<a href="<?php the_permalink(); ?>"><span class="readmore"><i class="icon-right"></i></span><p>阅读更多</p></a>
 						</div><!-- .btn -->
 					</section>
 				</article>

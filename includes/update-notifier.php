@@ -77,14 +77,12 @@ function update_notifier() {
 		<div id="instructions">
 		    <h3>主题更新提示与注意事项：</h3>
 		    <p>本页面意在告诉您正在使用的<?php echo NOTIFIER_THEME_NAME; ?>主题有了更新版本，为保证主题使用质量，请准备下载更新升级本主题。</p>
-		    <p><?php echo NOTIFIER_THEME_NAME; ?>主题最新版本下载地址：<a href="">http://devework.com/xxxx </a></p>
-		    <p>在获得最新主题包前，建议您事先<strong>备份</strong>一下网站数据。虽然更新主题一般来说是很安全的，但数据无价，为了以防万一，有备无患。</p>
+		    <p><?php echo NOTIFIER_THEME_NAME; ?>主题简介：<a target="_blank" href="http://devework.com/bevework.html">http://devework.com/bevework.html</a></p>
+		    <p>最新版主题包下载地址请前往DW商城登录“我的账户”页面获取，如果你之前是在第三方获取的，为了保证是官方原版，建议注册个账户（本主题购买是免费的）：</p>
+		    <p><a target="_blank" href="http://store.devework.com/product/bevework">DW商城Bevework主题主页</a>&nbsp;&nbsp;<a target="_blank" href="http://store.devework.com/">其他优秀收费主题</a></p>
+		    <p>在下载最新主题包前，建议您事先<strong>备份</strong>一下网站数据。虽然更新主题一般来说是很安全的，但数据无价，为了以防万一，有备无患。</p>
 		    <p>感谢您的支持，如有打扰，还望见谅！</p>
-		    <p>其他信息：</p>
-		    <ul>
-		    	<li><?php echo NOTIFIER_THEME_NAME; ?>主题介绍：http://devework.com/xxxx</li>
-		    	<li><?php echo NOTIFIER_THEME_NAME; ?>主题介绍：http://devework.com/xxxx</li>
-		    </ul>
+		    
 		</div>
 	    
 	    <h3 class="title">更新历史</h3>
