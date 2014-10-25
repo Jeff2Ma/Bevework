@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notifier>
+	<latest>1.0</latest>
+	<changelog>
+<![CDATA[
+<h4>Version 1.0</h4>
+<ul>
+<li>正式版发布版本1.0</li>
+</ul>
+<h4>Version 0.9</h4>
+<ul>
+<li>内部测试开发版本</li>
+</ul>
+<h4>Versi 0.8</h4>
+<ul>
+<li>内部测试开发版本</li>
+</ul>
+]]>
+	</changelog>
+</notifier>

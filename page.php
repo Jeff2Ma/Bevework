@@ -38,11 +38,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; get_header();?>
                 </article>
 
 
-<?php 
-        if(comments_open( get_the_ID() ))  {
-            comments_template('', true); 
-        }
-    ?>
+        <?php 
+            if(comments_open( get_the_ID() ))  {
+             comments_template('', true); 
+              }
+        ?>
 
 
                 </div> <!-- #content -->

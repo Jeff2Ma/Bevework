@@ -28,8 +28,6 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	// If using image radio buttons, define a directory path
-	$imagedwpath =  get_template_directory_uri() . '/images/pattern/sample/';
-	$imagedwpath2 =  get_template_directory_uri() . '/images/';
 	$options = array();
 
 
@@ -47,7 +45,7 @@ function optionsframework_options() {
 	$options[] = array(
 		//'name' => __('主题相关', 'options_framework_theme'),
 		'desc' => __('
-			<p><a href="http://devework.com/bevework.html">Bevework 主题介绍</a>  &nbsp;&nbsp;<a href="http://store.devework.com/product/bevework">最新版下载地址</a> &nbsp;&nbsp;<a href="//devework.com">DeveWork.com</a></p>
+			<p><a href="http://devework.com/bevework.html">Bevework 主题介绍</a>  &nbsp;&nbsp;<a href="http://store.devework.com/product/bevework">最新版下载地址</a> &nbsp;&nbsp;<a href="//devework.com">DeveWork.com</a>  &nbsp;&nbsp;<a href="http://devework.com/bevework.html#comment">bug反馈</a></p>
 			<span>声明：</span>
 			<ol>
 			<li>Bevework 主题是免费主题，但<strong style="color:red;">不提供</strong>免费技术支持；如果你喜欢，可以<a href="http://devework.com/bevework.html#qqqun">加入Bevework 主题用户群</a>，互帮互助；</li>
@@ -296,7 +294,7 @@ $options[] = array(
 
 	$options[] = array(
 		'desc' => __('1、首页主题特色图像设置说明
-			<p>首页主题特色图像默认为如果不为文章添加特色图像（建议图片大小685x280），将自动展示随机图片（随机图片位于主题目录的images-pic 下）。</p>
+			<p>（请提前将WP后台仪表盘-设置-多媒体的尺寸全部填为0）首页主题特色图像默认为如果不为文章添加特色图像（建议图片大小685x280），将自动展示随机图片（随机图片位于主题目录的images-pic 下）。</p>
 			2、菜单设置说明
 			<p>导航菜单最佳设置为7个，且都为一级菜单为宜（主题仅支持一级菜单）。</p>
 			3、页脚版权链接说明

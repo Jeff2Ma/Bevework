@@ -8,7 +8,7 @@ add_action('admin_menu','dw_store_list_page');
 define( 'store_list_cache_time', 864000); //10 day
 
 function get_dw_store_list($interval) {
-	$store_list_file_url = 'http://storecdn.devework.com/xml/store.xml';
+	$store_list_file_url = 'http://store.devework.com/xml/store.xml';
 	$db_list_cache_field = 'store_list_cache';
 	$db_list_cache_field_last_updated = 'store_list_cache_last_updated';
 	$last = get_option( $db_list_cache_field_last_updated );

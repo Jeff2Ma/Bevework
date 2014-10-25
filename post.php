@@ -12,7 +12,7 @@
 						</div><!-- .title-meta -->
 					</div><!-- .title -->
 					<div class="featured_image aligncenter">
-						<img src="<?php beve_post_img_url();?>">
+						<img width="685" height="280" src="<?php beve_post_img_url();?>">
 					</div><!-- .featured_image -->
 					<section class="clearfix">
 						<div class="entry">

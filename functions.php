@@ -291,7 +291,7 @@ return get_avatar($email, $size);
  * 反垃圾评论
  *
  * @version 1.0.0
- * @author willliamkan
+ * @author  Willin
  *
  */
 class anti_spam {
@@ -334,6 +334,14 @@ class anti_spam {
 }
 $anti_spam = new anti_spam();
 
+/**
+ * 链接管理器
+ *
+ * @version 1.0.0
+ * @author wp
+ *
+ */
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 /**
  * 自定义标签云
  *
