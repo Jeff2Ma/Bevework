@@ -93,19 +93,19 @@ function optionsframework_options() {
 		'std'=> get_bloginfo('template_url').'/images/logo.png',
 		'type' => 'upload');	
 	
-	// $options[] = array(
-	// 	'name' => __('首页关键词', 'options_framework_theme'),
-	// 	'desc' => __('首页关键词，用于源代码中显示；一般不超过100个字符，关键词之间用英文逗号隔开', 'options_framework_theme'),
-	// 	'id' => 'dw_keywords',
-	// 	'std' => 'WordPress,wordpress主题,wordpress插件,WordPress开发,代码,前端,建站',
-	// 	'type' => 'textarea');
+	$options[] = array(
+		'name' => __('首页关键词', 'options_framework_theme'),
+		'desc' => __('首页关键词，用于源代码中显示；一般不超过100个字符，关键词之间用英文逗号隔开', 'options_framework_theme'),
+		'id' => 'dw_keywords',
+		'std' => 'WordPress,wordpress主题,wordpress插件,WordPress开发,代码,前端,建站',
+		'type' => 'textarea');
 
-	// $options[] = array(
-	// 	'name' => __('首页描述', 'options_framework_theme'),
-	// 	'desc' => __('首页描述，用于源代码中显示；一般不超过200个字符', 'options_framework_theme'),
-	// 	'id' => 'dw_description',
-	// 	'std' => '一个有关WordPress技巧与前端开发知识的个人博客，以分享、研究探讨WordPress技巧为主要内容，博主乃WordPress极客一枚',
-	// 	'type' => 'textarea');
+	$options[] = array(
+		'name' => __('首页描述', 'options_framework_theme'),
+		'desc' => __('首页描述，用于源代码中显示；一般不超过200个字符', 'options_framework_theme'),
+		'id' => 'dw_description',
+		'std' => '一个有关WordPress技巧与前端开发知识的个人博客，以分享、研究探讨WordPress技巧为主要内容，博主乃WordPress极客一枚',
+		'type' => 'textarea');
 
 	$options[] = array(
 		'name' => __('文章页特色图像', 'options_framework_theme'),

@@ -5,11 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 * WordPress 免费博客主题 Bevework，请勿用于商业行为，谢谢！
 * 本主题设计借鉴了http://www.anzhuo.cn/，特此感谢！
 * 二次开发建议：建议个人添加代码从custom 文件夹下custom.php 添加。若有bug 或更好的想法欢迎提出！
-* @since 1.0.0
 * @copyright Jeff  http://DeveWork.com
+*
 */
 
-/*__________________________________________定义全局变量________________________________________*/
+/*__________________________________________定义全局常量________________________________________*/
 
 define('THEMEVER', wp_get_theme()->get( 'Version' )); 
 define("DWPATH", get_bloginfo('template_directory'));
@@ -433,5 +433,79 @@ function html5_shiv() {
      echo '/js/html5.js"></script><![endif]-->'. "\n";
 }
 
+/**
+ * 特色图像提示语言
+ *
+ * @version 1.0.2
+ * @author http://blog.wpjam.com/m/post-thumnail-with-size/
+ *
+ */
+add_filter('admin_post_thumbnail_html', 'beve_post_thumbnail_html',10,2);
+function beve_post_thumbnail_html($content, $post_id){
+  $post = get_post($post_id);
+  $post_type = $post->post_type;
+  if($post_type == 'post'){
+    return $content.'<p>推荐大小：685x280</p>';
+  }
+  return $content;
+}
+
+/**
+ * header 的keyword,descript 等SEO meta 标签
+ *
+ * @version 1.1
+ * @author Jeff ~ DeveWork.com
+ *
+ */
+function  mindia_head_meta(){
+   global $post;
+    if (is_home())
+  {
+    $keywords = beve_option('dw_keywords', '' );;
+    $description = beve_option('dw_description', '' );;
+  }
+  elseif (is_category())
+  {
+  $description = strip_tags(trim(category_description()));
+  $keywords = single_cat_title('', false);
+  }
+  elseif (is_single())
+  {
+     if ($post->post_excerpt) {$description = $post->post_excerpt;} 
+   else {$description = utf8Substr(strip_tags($post->post_content),0,120);
+$description = str_replace("\r\n","",$description);
+$description = str_replace("\n","",$description);
+$description = str_replace("\"","'",$description);
+$description .= '...';
+   }
+    $keywords = "";
+    $tags = wp_get_post_tags($post->ID);
+    foreach ($tags as $tag ) {$keywords = $keywords . $tag->name . ", ";}
+  }
+  ?>
+<meta name="keywords" content="<?php echo $keywords ?>" />
+<meta name="description" content="<?php echo $description ?>" />
+<?php if( function_exists('get_query_var') ) {$cpage = intval(get_query_var('cpage'));if(!empty($cpage)) {echo '<meta name="robots" content="noindex, nofollow" />';}}
+}
+add_action('wp_head','mindia_head_meta',1);
+// utf8 substr
+function utf8Substr($str, $from, $len) {
+return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'.
+'((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s',
+'$1',$str);
+}
+
+/**
+ * 多说服务器缓存加速Gravatar 头像
+ *
+ * @version 1.1
+ * @author http://devework.com/accelerate-cache-gravatar-avatar-from-duoshuo.html
+ *
+ */
+function beve_get_avatar($avatar) {
+$avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.duoshuo.com",$avatar);
+return $avatar;
+}
+add_filter( 'get_avatar', 'beve_get_avatar', 10, 3 );
 
  ?>
