@@ -1239,3 +1239,23 @@ ol.commentlist li .vcard #avatar img {
   -o-transition: all 0.15s ease-in-out;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out; }
+
+/* line 621, ../sass/style.scss */
+.back-top {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  display: none;
+  z-index: 999; }
+  /* line 627, ../sass/style.scss */
+  .back-top a {
+    color: #fefefe;
+    width: 100%;
+    font-size: 12px;
+    display: block;
+    padding: 2px 4px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    line-height: 2.5em;
+    margin-top: 15px;
+    border-top: 4px solid #55bde8; }

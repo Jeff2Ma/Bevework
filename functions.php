@@ -17,11 +17,14 @@ define("DWPATH", get_bloginfo('template_directory'));
 
 /*_____________________________________ 加载脚本文件 ______________________________________*/
 
+//edit at 20141126
 add_action('wp_enqueue_scripts', 'beve_script');
 function beve_script() {
     wp_enqueue_style('style',DWPATH . '/style.css',array(),THEMEVER,'screen');
     wp_enqueue_style('fontello',DWPATH . '/css/fontello/css/fontello.css',array(),THEMEVER,'screen');
     wp_enqueue_script( 'jquery1.7.2', 'http://libs.baidu.com/jquery/1.7.2/jquery.min.js', array(), '1.7.2', false);
+    wp_enqueue_script( 'beveworkjs', DWPATH . '/js/bevework.js', array(), THEMEVER, true);
+
     if ( is_singular() || is_page()){
       wp_enqueue_script( 'commentajax', DWPATH . '/comments-ajax.js', array(), THEMEVER, true);
     }

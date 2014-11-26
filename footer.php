@@ -43,6 +43,9 @@ $md_github_url = beve_option('md_github_url');
 			<div class="cpright"></div>
 		</div> <!-- .float_right -->
 	</div> <!-- .f-content -->
+<div class="back-top">
+	<a href="#" id="goTop">回到顶部</a>
+</div>
 <?php dw_footer(); ?>
 </body>
 </html>
